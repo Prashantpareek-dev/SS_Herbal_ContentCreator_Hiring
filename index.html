@@ -22,8 +22,8 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-  body{font-size:16px;font-family:'Nunito',sans-serif;background:var(--off-white);color:var(--black);overflow-x:hidden;}
-  h1,h2,h3,h4{font-family:'Nunito',sans-serif;font-weight:800;}
+  body{font-size:16px;font-family:sans-serif;background:var(--off-white);color:var(--black);overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:sans-serif;font-weight:800;}
   ::-webkit-scrollbar{width:6px;}
   ::-webkit-scrollbar-track{background:#1a1a1a;}
   ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
@@ -125,8 +125,8 @@
   .sticky-b{position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--black);border-top:1px solid rgba(201,168,76,.3);color:var(--white);padding:15px;text-align:center;transform:translateY(100%);transition:transform .5s ease;}
   .sticky-b.on{transform:translateY(0);}
 
-  .cnum{font-family:'Nunito',sans-serif;font-size:3.4rem;font-weight:800;color:var(--gold);}
-  .finp{width:100%;background:var(--off-white);border:1.5px solid rgba(201,168,76,.25);border-radius:10px;padding:15px 19px;font-size:1.02rem;font-family:'Nunito',sans-serif;color:var(--black);outline:none;transition:border .3s,box-shadow .3s;}
+  .cnum{font-family:sans-serif;font-size:3.4rem;font-weight:800;color:var(--gold);}
+  .finp{width:100%;background:var(--off-white);border:1.5px solid rgba(201,168,76,.25);border-radius:10px;padding:15px 19px;font-size:1.02rem;font-family:sans-serif;color:var(--black);outline:none;transition:border .3s,box-shadow .3s;}
   .finp:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,.12);}
 
   .mwrap{overflow:hidden;white-space:nowrap;}
@@ -154,7 +154,7 @@
     <div class="flex items-center gap-3">
       <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background:var(--black);border:2px solid var(--gold);overflow:hidden;flex-shrink:0;"><img src="./Image/logo.avif" alt="SS Herbal India Logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
       <div>
-        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.05rem;line-height:1.2;color:var(--white);">SS Herbal India</p>
+        <p style="font-family:sans-serif;font-weight:800;font-size:1.05rem;line-height:1.2;color:var(--white);">SS Herbal India</p>
         <p style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--gold);">100% AYURVEDIC</p>
       </div>
     </div>
@@ -167,22 +167,10 @@
     <a href="#apply" class="btn" style="font-size:1rem;padding:11px 28px;">Apply Now</a>
   </div>
 </nav>
-        <p style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;line-height:1.2;">SS Herbal India</p>
-        <p style="font-size:.78rem;color:var(--gold);letter-spacing:1.5px;">100% AYURVEDIC</p>
-      </div>
-    </div>
-    <div class="hidden md:flex items-center gap-7" style="font-size:1rem;font-weight:500;color:var(--gray);">
-      <a href="#about" style="text-decoration:none;color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color=''">About</a>
-      <a href="#roles" style="text-decoration:none;color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color=''">Roles</a>
-      <a href="#offer" style="text-decoration:none;color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color=''">Benefits</a>
-      <a href="#faq" style="text-decoration:none;color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color=''">FAQ</a>
-    </div>
-    <a href="#apply" class="btn" style="font-size:.88rem;padding:9px 22px;">Apply Now</a>
-  </div>
-</nav>
+     
 
 <!-- ═══ HERO ═══ -->
-<section style="background:linear-gradient(160deg,#111111 0%,#1a1a1a 60%,#222222 100%);position:relative;overflow:hidden;padding-top:88px;" id="hero">
+<section style="background:linear-gradient(160deg,#111111 0%,#1a1a1a 60%,#222222 100%);position:relative;overflow:hidden; padding:25px;" id="hero">
   <div style="position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 opacity=%220.07%22%3E%3Cellipse cx=%2260%22 cy=%2260%22 rx=%2218%22 ry=%2250%22 fill=%22%23c9a84c%22 transform=%22rotate(-30,60,60)%22/%3E%3Cellipse cx=%2260%22 cy=%2260%22 rx=%2218%22 ry=%2250%22 fill=%22%23c9a84c%22 transform=%22rotate(30,60,60)%22/%3E%3C/svg%3E');background-size:120px;pointer-events:none;z-index:0;"></div>
   <span style="position:absolute;top:110px;right:7%;font-size:3.5rem;opacity:.18;z-index:1;" class="anim-float">🌿</span>
   <span style="position:absolute;bottom:100px;left:3%;font-size:2.6rem;opacity:.16;z-index:1;animation-delay:.7s;" class="anim-float">🍃</span>
@@ -193,7 +181,7 @@
 
       <!-- LEFT COPY -->
       <div class="hero-t">
-        <div class="stag">🌿 We Are Hiring Creators</div>
+       
         <h1 class="stit" style="font-size:clamp(2.6rem,5vw,4rem);color:#fff;">
           Create Content.<br/>
           <span>Grow Together.</span><br/>
@@ -268,23 +256,23 @@
 </section>
 
 <!-- ═══ MARQUEE ═══ -->
-<div style="background:var(--black);border-top:1px solid rgba(201,168,76,.25);border-bottom:1px solid rgba(201,168,76,.25);padding:12px 0;">
+<div style="background:transparent;padding:12px 0;">
   <div class="mwrap">
     <div class="minner anim-marquee">
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🌿 100% Ayurvedic</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">💸 Paid Campaigns</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">📦 Monthly Brand Briefs</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🇮🇳 PAN India Network</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🎓 Full Guidance Provided</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🤝 Long-Term Partnership</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🏡 100% Work From Home</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🌿 100% Ayurvedic</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">💸 Paid Campaigns</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">📦 Monthly Brand Briefs</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🇮🇳 PAN India Network</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🎓 Full Guidance Provided</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🤝 Long-Term Partnership</span><span style="color:var(--gold);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.7);">🏡 100% Work From Home</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🌿 100% Ayurvedic</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">💸 Paid Campaigns</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">📦 Monthly Brand Briefs</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🇮🇳 PAN India Network</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🎓 Full Guidance Provided</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🤝 Long-Term Partnership</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🏡 100% Work From Home</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🌿 100% Ayurvedic</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">💸 Paid Campaigns</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">📦 Monthly Brand Briefs</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🇮🇳 PAN India Network</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🎓 Full Guidance Provided</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🤝 Long-Term Partnership</span><span style="color:var(--gold);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:600;color:rgba(0,0,0,.7);">🏡 100% Work From Home</span><span style="color:var(--gold);padding:0 6px;">✦</span>
     </div>
   </div>
 </div>
@@ -545,7 +533,7 @@
           <img src="https://images.unsplash.com/photo-1520694478166-daaaaec95b69?w=600&q=82&fit=crop" alt="Career growth success professional development"/>
           <div class="ov" style="background:linear-gradient(to top,rgba(0,0,0,.85),transparent 60%);"></div>
           <div style="position:absolute;bottom:20px;left:20px;">
-            <p style="color:var(--gold-lt);font-family:'Nunito',sans-serif;font-size:1.3rem;font-weight:800;">Your Creator Career</p>
+            <p style="color:var(--gold-lt);font-family:sans-serif;font-size:1.3rem;font-weight:800;">Your Creator Career</p>
             <p style="color:rgba(255,255,255,.6);font-size:.8rem;margin-top:4px;">Grows with every project</p>
           </div>
         </div>
