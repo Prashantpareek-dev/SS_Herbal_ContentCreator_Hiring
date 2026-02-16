@@ -18,7 +18,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden;}
+  body{font-size:16px;font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden;}
   h1,h2,h3,h4{font-family:'Playfair Display',serif;}
   ::-webkit-scrollbar{width:6px;}
   ::-webkit-scrollbar-track{background:var(--cream-d);}
@@ -61,61 +61,61 @@
   .rr{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease;}
   .rr.in{opacity:1;transform:translateX(0);}
 
-  .card{background:#fff;border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(58,125,68,.07);transition:transform .4s ease,box-shadow .4s ease;}
+  .card{background:#fff;border-radius:20px;padding:30px;box-shadow:0 4px 24px rgba(58,125,68,.07);transition:transform .4s ease,box-shadow .4s ease;}
   .card:hover{transform:translateY(-8px);box-shadow:0 18px 44px rgba(58,125,68,.14);}
 
   .iw{position:relative;overflow:hidden;border-radius:16px;}
   .iw img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
   .iw:hover img{transform:scale(1.06);}
   .iw .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 65%);pointer-events:none;}
-  .iw .ib{position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:50px;padding:5px 14px;font-size:.73rem;font-weight:600;color:var(--green);}
+  .iw .ib{position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:50px;padding:5px 14px;font-size:.82rem;font-weight:600;color:var(--green);}
   .iw::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:transform .6s;}
   .iw:hover::after{transform:translateX(100%);}
 
-  .stag{display:inline-block;background:var(--green-xs);color:var(--green);font-size:.74rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:13px;}
-  .stit{font-size:clamp(1.85rem,3.7vw,2.85rem);line-height:1.2;}
+  .stag{display:inline-block;background:var(--green-xs);color:var(--green);font-size:.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:7px 20px;border-radius:50px;margin-bottom:14px;}
+  .stit{font-size:clamp(2.4rem,4.5vw,3.6rem);line-height:1.18;}
   .stit span{color:var(--green);}
-  .divl{width:55px;height:4px;background:linear-gradient(90deg,var(--green),var(--green-lt));border-radius:2px;margin:13px 0 21px;}
+  .divl{width:60px;height:5px;background:linear-gradient(90deg,var(--green),var(--green-lt));border-radius:3px;margin:16px 0 24px;}
   .divl.cx{margin-left:auto;margin-right:auto;}
 
-  .btn{background:var(--green);color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;font-size:1rem;letter-spacing:.4px;border:none;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;display:inline-block;text-decoration:none;}
+  .btn{background:var(--green);color:#fff;padding:16px 38px;border-radius:50px;font-weight:600;font-size:1.08rem;letter-spacing:.4px;border:none;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;display:inline-block;text-decoration:none;}
   .btn::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.15);opacity:0;transition:.3s;}
   .btn:hover::before{opacity:1;}
   .btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(58,125,68,.35);}
-  .btno{background:transparent;color:var(--green);padding:13px 30px;border-radius:50px;font-weight:600;font-size:1rem;border:2px solid var(--green);cursor:pointer;transition:all .3s;display:inline-block;text-decoration:none;}
+  .btno{background:transparent;color:var(--green);padding:15px 36px;border-radius:50px;font-weight:600;font-size:1.08rem;border:2px solid var(--green);cursor:pointer;transition:all .3s;display:inline-block;text-decoration:none;}
   .btno:hover{background:var(--green);color:#fff;transform:translateY(-3px);}
 
   nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,243,236,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(58,125,68,.12);transition:box-shadow .3s;}
   nav.sc{box-shadow:0 4px 20px rgba(0,0,0,.08);}
 
-  .tbadge{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(58,125,68,.18);border-radius:12px;padding:9px 16px;font-size:.82rem;font-weight:500;color:var(--gray);transition:all .3s;}
+  .tbadge{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(58,125,68,.18);border-radius:12px;padding:11px 18px;font-size:.95rem;font-weight:500;color:var(--gray);transition:all .3s;}
   .tbadge:hover{border-color:var(--green);transform:translateY(-3px);}
 
   .faq-it{border-bottom:1px solid rgba(58,125,68,.14);overflow:hidden;}
   .ftog{display:none;}
   .ftog:checked~.fbody{max-height:300px;opacity:1;}
   .fbody{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .5s ease;}
-  .flabel{cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-weight:600;font-size:.93rem;}
-  .flabel .ic{transition:transform .4s;color:var(--green);font-size:1.3rem;}
+  .flabel{cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-weight:600;font-size:1.05rem;}
+  .flabel .ic{transition:transform .4s;color:var(--green);font-size:1.5rem;}
   .ftog:checked~.flabel .ic{transform:rotate(45deg);}
 
-  .sticky-b{position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--green);color:#fff;padding:13px;text-align:center;transform:translateY(100%);transition:transform .5s ease;}
+  .sticky-b{position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--green);color:#fff;padding:15px;text-align:center;transform:translateY(100%);transition:transform .5s ease;}
   .sticky-b.on{transform:translateY(0);}
 
-  .cnum{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--green);}
-  .finp{width:100%;background:var(--cream);border:1.5px solid rgba(58,125,68,.2);border-radius:12px;padding:13px 17px;font-size:.93rem;font-family:'DM Sans',sans-serif;color:var(--charcoal);outline:none;transition:border .3s,box-shadow .3s;}
+  .cnum{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:700;color:var(--green);}
+  .finp{width:100%;background:var(--cream);border:1.5px solid rgba(58,125,68,.2);border-radius:12px;padding:15px 19px;font-size:1.02rem;font-family:'DM Sans',sans-serif;color:var(--charcoal);outline:none;transition:border .3s,box-shadow .3s;}
   .finp:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(58,125,68,.1);}
 
   .mwrap{overflow:hidden;white-space:nowrap;}
   .minner{display:inline-flex;}
   .sdot{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;box-shadow:0 4px 14px rgba(58,125,68,.28);}
 
-  .mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:196px 196px;gap:12px;}
+  .mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:220px 220px;gap:14px;}
   .mosaic .big{grid-row:1/3;}
 
   @media(max-width:640px){
-    .stit{font-size:1.7rem;}
-    .cnum{font-size:2rem;}
+    .stit{font-size:2rem;}
+    .cnum{font-size:2.4rem;}
     .mosaic{grid-template-rows:150px 150px;}
   }
 </style>
@@ -124,15 +124,15 @@
 
 <!-- ═══ NAVBAR ═══ -->
 <nav id="nav">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+  <div class="w-full px-4 sm:px-8 py-3 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg" ><img src="./Image/logo.avif" alt=""></div>
       <div>
-        <p style="font-family:'Playfair Display',serif;font-weight:700;font-size:.88rem;line-height:1.2;">SS Herbal India</p>
-        <p style="font-size:.68rem;color:var(--green);letter-spacing:1.5px;">100% AYURVEDIC</p>
+        <p style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;line-height:1.2;">SS Herbal India</p>
+        <p style="font-size:.78rem;color:var(--green);letter-spacing:1.5px;">100% AYURVEDIC</p>
       </div>
     </div>
-    <div class="hidden md:flex items-center gap-7" style="font-size:.88rem;font-weight:500;color:var(--gray);">
+    <div class="hidden md:flex items-center gap-7" style="font-size:1rem;font-weight:500;color:var(--gray);">
       <a href="#about" style="text-decoration:none;color:inherit;transition:color .2s;" onmouseover="this.style.color='#3a7d44'" onmouseout="this.style.color=''">About</a>
       <a href="#roles" style="text-decoration:none;color:inherit;transition:color .2s;" onmouseover="this.style.color='#3a7d44'" onmouseout="this.style.color=''">Roles</a>
       <a href="#offer" style="text-decoration:none;color:inherit;transition:color .2s;" onmouseover="this.style.color='#3a7d44'" onmouseout="this.style.color=''">Benefits</a>
@@ -149,33 +149,33 @@
   <span style="position:absolute;bottom:100px;left:3%;font-size:2.6rem;opacity:.16;z-index:1;animation-delay:.7s;" class="anim-float">🍃</span>
   <span style="position:absolute;top:42%;right:22%;font-size:2rem;opacity:.13;z-index:1;" class="anim-leaf">🌱</span>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative py-14 pb-24" style="z-index:2;">
+  <div class="w-full px-4 sm:px-8 relative py-14 pb-24" style="z-index:2;">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
 
       <!-- LEFT COPY -->
       <div class="hero-t">
         <div class="stag">🌿 We Are Hiring Creators</div>
-        <h1 class="stit" style="font-size:clamp(2.1rem,4.5vw,3.3rem);">
+        <h1 class="stit" style="font-size:clamp(2.6rem,5vw,4rem);">
           Create Content.<br/>
           <span>Grow Together.</span><br/>
           Earn Consistently.
         </h1>
         <div class="divl"></div>
-        <p style="color:var(--gray);line-height:1.75;font-size:.98rem;">
+        <p style="color:var(--gray);line-height:1.8;font-size:1.1rem;">
           SS Herbal India is looking for passionate <strong>UGC creators, freelance video makers &amp; voice artists</strong> 
           to join our growing digital campaign ecosystem. Real work. Real pay. Long-term partnership.
         </p>
         <ul style="margin-top:22px;display:flex;flex-direction:column;gap:12px;">
-          <li style="display:flex;align-items:center;gap:12px;font-size:.88rem;font-weight:500;">
+          <li style="display:flex;align-items:center;gap:12px;font-size:1rem;font-weight:500;">
             <span style="width:32px;height:32px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;">💸</span>Paid Projects — every campaign
           </li>
-          <li style="display:flex;align-items:center;gap:12px;font-size:.88rem;font-weight:500;">
+          <li style="display:flex;align-items:center;gap:12px;font-size:1rem;font-weight:500;">
             <span style="width:32px;height:32px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;">🤝</span>Long-Term Collaboration — not one-time
           </li>
-          <li style="display:flex;align-items:center;gap:12px;font-size:.88rem;font-weight:500;">
+          <li style="display:flex;align-items:center;gap:12px;font-size:1rem;font-weight:500;">
             <span style="width:32px;height:32px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;">📦</span>Consistent Monthly Brand Briefs
           </li>
-          <li style="display:flex;align-items:center;gap:12px;font-size:.88rem;font-weight:500;">
+          <li style="display:flex;align-items:center;gap:12px;font-size:1rem;font-weight:500;">
             <span style="width:32px;height:32px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;">🎁</span>Performance Bonuses for Top Creators
           </li>
         </ul>
@@ -216,8 +216,8 @@
         <div class="card anim-pulse" style="position:absolute;bottom:-16px;left:-12px;padding:12px 18px;display:flex;align-items:center;gap:11px;z-index:10;border:1px solid rgba(58,125,68,.15);">
           <div style="width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;">🌿</div>
           <div>
-            <p style="font-size:.68rem;color:#9ca3af;">Now Accepting</p>
-            <p style="font-size:.85rem;font-weight:700;">New Creators 2025</p>
+            <p style="font-size:.8rem;color:#9ca3af;">Now Accepting</p>
+            <p style="font-size:.97rem;font-weight:700;">New Creators 2025</p>
           </div>
         </div>
       </div>
@@ -232,86 +232,86 @@
 <div style="background:#fff;border-top:1px solid rgba(58,125,68,.1);border-bottom:1px solid rgba(58,125,68,.1);padding:12px 0;">
   <div class="mwrap">
     <div class="minner anim-marquee">
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🌿 100% Ayurvedic</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">💸 Paid Campaigns</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">📦 Monthly Brand Briefs</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🇮🇳 PAN India Network</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🎓 Full Guidance Provided</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🤝 Long-Term Partnership</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🏡 100% Work From Home</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🌿 100% Ayurvedic</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">💸 Paid Campaigns</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">📦 Monthly Brand Briefs</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🇮🇳 PAN India Network</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🎓 Full Guidance Provided</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🤝 Long-Term Partnership</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
-      <span style="padding:0 22px;font-size:.8rem;font-weight:500;color:var(--gray);">🏡 100% Work From Home</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🌿 100% Ayurvedic</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">💸 Paid Campaigns</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">📦 Monthly Brand Briefs</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🇮🇳 PAN India Network</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🎓 Full Guidance Provided</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🤝 Long-Term Partnership</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🏡 100% Work From Home</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🌿 100% Ayurvedic</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">💸 Paid Campaigns</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">📦 Monthly Brand Briefs</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🇮🇳 PAN India Network</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🎓 Full Guidance Provided</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🤝 Long-Term Partnership</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
+      <span style="padding:0 22px;font-size:.92rem;font-weight:500;color:var(--gray);">🏡 100% Work From Home</span><span style="color:var(--green-lt);padding:0 6px;">✦</span>
     </div>
   </div>
 </div>
 
 <!-- ═══ STATS ═══ -->
-<section style="background:#fff;padding:52px 0;">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section style="background:#fff;padding:48px 0;">
+  <div class="w-full px-4 sm:px-8">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div class="reveal"><div class="cnum counter" data-t="500">0</div><p style="font-size:.7rem;font-weight:600;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:5px;">Products</p></div>
-      <div class="reveal" style="transition-delay:.1s;"><div class="cnum counter" data-t="28">0</div><p style="font-size:.7rem;font-weight:600;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:5px;">States Served</p></div>
-      <div class="reveal" style="transition-delay:.2s;"><div class="cnum counter" data-t="1200">0</div><p style="font-size:.7rem;font-weight:600;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:5px;">Creator Network</p></div>
-      <div class="reveal" style="transition-delay:.3s;"><div class="cnum">10+</div><p style="font-size:.7rem;font-weight:600;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:5px;">Years of Trust</p></div>
+      <div class="reveal"><div class="cnum counter" data-t="500">0</div><p style="font-size:.85rem;font-weight:600;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:6px;">Products</p></div>
+      <div class="reveal" style="transition-delay:.1s;"><div class="cnum counter" data-t="28">0</div><p style="font-size:.85rem;font-weight:600;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:6px;">States Served</p></div>
+      <div class="reveal" style="transition-delay:.2s;"><div class="cnum counter" data-t="1200">0</div><p style="font-size:.85rem;font-weight:600;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:6px;">Creator Network</p></div>
+      <div class="reveal" style="transition-delay:.3s;"><div class="cnum">10+</div><p style="font-size:.85rem;font-weight:600;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:6px;">Years of Trust</p></div>
     </div>
   </div>
 </section>
 
 <!-- ═══ ABOUT ═══ -->
-<section class="leaf-bg" style="padding:76px 0;" id="about">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section class="leaf-bg" style="padding:72px 0;" id="about">
+  <div class="w-full px-4 sm:px-8">
     <div class="grid lg:grid-cols-2 gap-14 items-center">
 
       <div class="rl">
         <div class="stag">🌿 Who We Are</div>
         <h2 class="stit">SS Herbal India —<br/><span>A Brand You Can Trust</span></h2>
         <div class="divl"></div>
-        <p style="color:var(--gray);line-height:1.75;margin-bottom:14px;">
+        <p style="color:var(--gray);line-height:1.8;font-size:1.05rem;margin-bottom:14px;">
           SS Herbal India is a reputed Ayurvedic wellness brand with over a decade of experience. 
           We formulate scientifically backed herbal products for millions of families across India — 
           zero harmful chemicals, full transparency.
         </p>
-        <p style="color:var(--gray);line-height:1.75;margin-bottom:26px;">
+        <p style="color:var(--gray);line-height:1.8;font-size:1.05rem;margin-bottom:26px;">
           As we scale our digital reach, we need authentic creators who believe in holistic wellness 
           and want to build a sustainable content career with a trustworthy brand.
         </p>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
-          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.5rem;margin-bottom:5px;">👂</span><span style="font-size:.73rem;">Ear Care</span></div>
-          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.5rem;margin-bottom:5px;">🩸</span><span style="font-size:.73rem;">Diabetes</span></div>
-          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.5rem;margin-bottom:5px;">🧠</span><span style="font-size:.73rem;">Nerve Health</span></div>
-          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.5rem;margin-bottom:5px;">🍽️</span><span style="font-size:.73rem;">Digestion</span></div>
-          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.5rem;margin-bottom:5px;">🛡️</span><span style="font-size:.73rem;">Immunity</span></div>
-          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.5rem;margin-bottom:5px;">🌱</span><span style="font-size:.73rem;">Wellness</span></div>
+          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.8rem;margin-bottom:6px;">👂</span><span style="font-size:.88rem;">Ear Care</span></div>
+          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.8rem;margin-bottom:6px;">🩸</span><span style="font-size:.88rem;">Diabetes</span></div>
+          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.8rem;margin-bottom:6px;">🧠</span><span style="font-size:.88rem;">Nerve Health</span></div>
+          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.8rem;margin-bottom:6px;">🍽️</span><span style="font-size:.88rem;">Digestion</span></div>
+          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.8rem;margin-bottom:6px;">🛡️</span><span style="font-size:.88rem;">Immunity</span></div>
+          <div class="tbadge" style="flex-direction:column;justify-content:center;text-align:center;padding:13px 8px;"><span style="font-size:1.8rem;margin-bottom:6px;">🌱</span><span style="font-size:.88rem;">Wellness</span></div>
         </div>
       </div>
 
       <div class="rr">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div class="iw" style="grid-row:1/3;height:380px;">
+          <div class="iw" style="grid-row:1/3;height:420px;">
             <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&q=82&fit=crop" alt="Ayurvedic herbal medicine bottles"/>
             <div class="ov"></div>
             <span class="ib">🌿 Pure Herbal</span>
           </div>
-          <div class="iw" style="height:184px;">
+          <div class="iw" style="height:202px;">
             <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=400&q=82&fit=crop" alt="Herbal spice ingredients turmeric"/>
             <div class="ov"></div>
             <span class="ib">🍃 Natural</span>
           </div>
-          <div class="iw" style="height:184px;">
+          <div class="iw" style="height:202px;">
             <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&q=82&fit=crop" alt="Ayurvedic wellness healthcare"/>
             <div class="ov"></div>
             <span class="ib">✅ Trusted</span>
           </div>
         </div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;">
-          <div class="card" style="text-align:center;padding:14px 8px;"><div style="font-size:1.5rem;margin-bottom:6px;">🌿</div><p style="font-size:.7rem;font-weight:700;color:var(--green);">100% Ayurvedic</p></div>
-          <div class="card" style="text-align:center;padding:14px 8px;"><div style="font-size:1.5rem;margin-bottom:6px;">🚫</div><p style="font-size:.7rem;font-weight:700;color:var(--green);">Zero Chemicals</p></div>
-          <div class="card" style="text-align:center;padding:14px 8px;"><div style="font-size:1.5rem;margin-bottom:6px;">🇮🇳</div><p style="font-size:.7rem;font-weight:700;color:var(--green);">PAN India</p></div>
+          <div class="card" style="text-align:center;padding:14px 8px;"><div style="font-size:1.5rem;margin-bottom:6px;">🌿</div><p style="font-size:.88rem;font-weight:700;color:var(--green);">100% Ayurvedic</p></div>
+          <div class="card" style="text-align:center;padding:14px 8px;"><div style="font-size:1.5rem;margin-bottom:6px;">🚫</div><p style="font-size:.88rem;font-weight:700;color:var(--green);">Zero Chemicals</p></div>
+          <div class="card" style="text-align:center;padding:14px 8px;"><div style="font-size:1.5rem;margin-bottom:6px;">🇮🇳</div><p style="font-size:.88rem;font-weight:700;color:var(--green);">PAN India</p></div>
         </div>
       </div>
     </div>
@@ -319,8 +319,8 @@
 </section>
 
 <!-- ═══ ROLES ═══ -->
-<section style="background:#fff;padding:76px 0;" id="roles">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section style="background:#fff;padding:72px 0;" id="roles">
+  <div class="w-full px-4 sm:px-8">
     <div class="text-center reveal" style="margin-bottom:52px;">
       <div class="stag">🎬 Open Positions</div>
       <h2 class="stit">Roles We're <span>Hiring For</span></h2>
@@ -329,54 +329,54 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 
       <div class="card reveal" style="padding:0;overflow:hidden;border-top:4px solid var(--green);">
-        <div class="iw" style="height:160px;border-radius:0;">
+        <div class="iw" style="height:180px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500&q=82&fit=crop" alt="Person filming product video phone"/>
           <div class="ov"></div>
         </div>
         <div style="padding:20px;">
           <div style="font-size:1.7rem;margin-bottom:9px;">📹</div>
-          <h3 style="font-size:1rem;font-weight:700;margin-bottom:7px;font-family:'Playfair Display',serif;">UGC Video Creator</h3>
-          <p style="font-size:.8rem;color:var(--gray);line-height:1.65;margin-bottom:12px;">Authentic product usage videos for Reels &amp; Shorts. Shoot from home with your smartphone.</p>
-          <span style="background:var(--green-xs);color:var(--green);font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:50px;">🏠 Work From Home</span>
+          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif;">UGC Video Creator</h3>
+          <p style="font-size:.95rem;color:var(--gray);line-height:1.7;margin-bottom:14px;">Authentic product usage videos for Reels &amp; Shorts. Shoot from home with your smartphone.</p>
+          <span style="background:var(--green-xs);color:var(--green);font-size:.82rem;font-weight:600;padding:5px 14px;border-radius:50px;">🏠 Work From Home</span>
         </div>
       </div>
 
       <div class="card reveal" style="padding:0;overflow:hidden;border-top:4px solid var(--green);transition-delay:.1s;">
-        <div class="iw" style="height:160px;border-radius:0;">
+        <div class="iw" style="height:180px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=500&q=82&fit=crop" alt="Creating social media reels on smartphone"/>
           <div class="ov"></div>
         </div>
         <div style="padding:20px;">
           <div style="font-size:1.7rem;margin-bottom:9px;">🎞️</div>
-          <h3 style="font-size:1rem;font-weight:700;margin-bottom:7px;font-family:'Playfair Display',serif;">Reel / Shorts Creator</h3>
-          <p style="font-size:.8rem;color:var(--gray);line-height:1.65;margin-bottom:12px;">Trending short-form content. Hooks, storytelling &amp; formats for wellness brand reach.</p>
-          <span style="background:var(--green-xs);color:var(--green);font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:50px;">📱 Mobile Friendly</span>
+          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif;">Reel / Shorts Creator</h3>
+          <p style="font-size:.95rem;color:var(--gray);line-height:1.7;margin-bottom:14px;">Trending short-form content. Hooks, storytelling &amp; formats for wellness brand reach.</p>
+          <span style="background:var(--green-xs);color:var(--green);font-size:.82rem;font-weight:600;padding:5px 14px;border-radius:50px;">📱 Mobile Friendly</span>
         </div>
       </div>
 
       <div class="card reveal" style="padding:0;overflow:hidden;border-top:4px solid var(--green);transition-delay:.2s;">
-        <div class="iw" style="height:160px;border-radius:0;">
+        <div class="iw" style="height:180px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=500&q=82&fit=crop" alt="Microphone podcast voice over recording"/>
           <div class="ov"></div>
         </div>
         <div style="padding:20px;">
           <div style="font-size:1.7rem;margin-bottom:9px;">🎙️</div>
-          <h3 style="font-size:1rem;font-weight:700;margin-bottom:7px;font-family:'Playfair Display',serif;">Voice-Over Artist</h3>
-          <p style="font-size:.8rem;color:var(--gray);line-height:1.65;margin-bottom:12px;">Clear Hindi or regional language voice for product explainers, testimonials &amp; ad scripts.</p>
-          <span style="background:var(--green-xs);color:var(--green);font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:50px;">🗣️ Multi-Language</span>
+          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif;">Voice-Over Artist</h3>
+          <p style="font-size:.95rem;color:var(--gray);line-height:1.7;margin-bottom:14px;">Clear Hindi or regional language voice for product explainers, testimonials &amp; ad scripts.</p>
+          <span style="background:var(--green-xs);color:var(--green);font-size:.82rem;font-weight:600;padding:5px 14px;border-radius:50px;">🗣️ Multi-Language</span>
         </div>
       </div>
 
       <div class="card reveal" style="padding:0;overflow:hidden;border-top:4px solid var(--green);transition-delay:.3s;">
-        <div class="iw" style="height:160px;border-radius:0;">
+        <div class="iw" style="height:180px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=82&fit=crop" alt="Person giving testimonial video review"/>
           <div class="ov"></div>
         </div>
         <div style="padding:20px;">
           <div style="font-size:1.7rem;margin-bottom:9px;">⭐</div>
-          <h3 style="font-size:1rem;font-weight:700;margin-bottom:7px;font-family:'Playfair Display',serif;">Testimonial Creator</h3>
-          <p style="font-size:.8rem;color:var(--gray);line-height:1.65;margin-bottom:12px;">Genuine, relatable testimonial videos. Real stories from real people about wellness results.</p>
-          <span style="background:var(--green-xs);color:var(--green);font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:50px;">😊 Authentic Only</span>
+          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif;">Testimonial Creator</h3>
+          <p style="font-size:.95rem;color:var(--gray);line-height:1.7;margin-bottom:14px;">Genuine, relatable testimonial videos. Real stories from real people about wellness results.</p>
+          <span style="background:var(--green-xs);color:var(--green);font-size:.82rem;font-weight:600;padding:5px 14px;border-radius:50px;">😊 Authentic Only</span>
         </div>
       </div>
     </div>
@@ -384,8 +384,8 @@
 </section>
 
 <!-- ═══ WHAT WE OFFER ═══ -->
-<section class="leaf-bg" style="padding:76px 0;" id="offer">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section class="leaf-bg" style="padding:72px 0;" id="offer">
+  <div class="w-full px-4 sm:px-8">
     <div class="text-center reveal" style="margin-bottom:52px;">
       <div class="stag">💼 What You Get</div>
       <h2 class="stit">Why Work With <span>SS Herbal India</span></h2>
@@ -393,7 +393,7 @@
     </div>
     <div class="grid lg:grid-cols-3 gap-5 mb-5">
       <!-- tall feature image -->
-      <div class="iw reveal" style="height:330px;border-radius:20px;grid-row:span 2 / span 2;">
+      <div class="iw reveal" style="height:360px;border-radius:20px;grid-row:span 2 / span 2;">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=82&fit=crop" alt="Team collaborating on creative content work"/>
         <div class="ov"></div>
         <div style="position:absolute;bottom:18px;left:18px;right:18px;">
@@ -402,42 +402,42 @@
         </div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.1s;">
-        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">💸</div>
-        <div><h4 style="font-weight:700;margin-bottom:4px;font-size:.95rem;">Transparent Payment</h4><p style="font-size:.81rem;color:var(--gray);">Fixed fee clearly stated upfront. Payments via UPI / Bank Transfer — no delays.</p></div>
+        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;">💸</div>
+        <div><h4 style="font-weight:700;margin-bottom:5px;font-size:1.05rem;">Transparent Payment</h4><p style="font-size:.95rem;color:var(--gray);">Fixed fee clearly stated upfront. Payments via UPI / Bank Transfer — no delays.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.2s;">
-        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">📋</div>
-        <div><h4 style="font-weight:700;margin-bottom:4px;font-size:.95rem;">Scripts &amp; Monthly Briefs</h4><p style="font-size:.81rem;color:var(--gray);">Creative briefs, scripts &amp; talking points provided — never start from zero.</p></div>
+        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;">📋</div>
+        <div><h4 style="font-weight:700;margin-bottom:5px;font-size:1.05rem;">Scripts &amp; Monthly Briefs</h4><p style="font-size:.95rem;color:var(--gray);">Creative briefs, scripts &amp; talking points provided — never start from zero.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.3s;">
-        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🎓</div>
-        <div><h4 style="font-weight:700;margin-bottom:4px;font-size:.95rem;">Official Certificate</h4><p style="font-size:.81rem;color:var(--gray);">Brand certificate after each campaign — builds your creator portfolio credibility.</p></div>
+        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;">🎓</div>
+        <div><h4 style="font-weight:700;margin-bottom:5px;font-size:1.05rem;">Official Certificate</h4><p style="font-size:.95rem;color:var(--gray);">Brand certificate after each campaign — builds your creator portfolio credibility.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.4s;">
-        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🔄</div>
-        <div><h4 style="font-weight:700;margin-bottom:4px;font-size:.95rem;">Recurring Monthly Work</h4><p style="font-size:.81rem;color:var(--gray);">Consistent monthly campaigns for selected creators — not a one-time gig.</p></div>
+        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;">🔄</div>
+        <div><h4 style="font-weight:700;margin-bottom:5px;font-size:1.05rem;">Recurring Monthly Work</h4><p style="font-size:.95rem;color:var(--gray);">Consistent monthly campaigns for selected creators — not a one-time gig.</p></div>
       </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <div class="card reveal flex gap-4 items-start">
-        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🏡</div>
-        <div><h4 style="font-weight:700;margin-bottom:4px;font-size:.95rem;">100% Work from Home</h4><p style="font-size:.81rem;color:var(--gray);">All work is remote. Shoot at your convenience, submit digitally.</p></div>
+        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;">🏡</div>
+        <div><h4 style="font-weight:700;margin-bottom:5px;font-size:1.05rem;">100% Work from Home</h4><p style="font-size:.95rem;color:var(--gray);">All work is remote. Shoot at your convenience, submit digitally.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.1s;">
-        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">📦</div>
-        <div><h4 style="font-weight:700;margin-bottom:4px;font-size:.95rem;">Free Product Samples</h4><p style="font-size:.81rem;color:var(--gray);">Products sent free to verified creators for review and demo content.</p></div>
+        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;">📦</div>
+        <div><h4 style="font-weight:700;margin-bottom:5px;font-size:1.05rem;">Free Product Samples</h4><p style="font-size:.95rem;color:var(--gray);">Products sent free to verified creators for review and demo content.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.2s;">
-        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🎁</div>
-        <div><h4 style="font-weight:700;margin-bottom:4px;font-size:.95rem;">Performance Bonuses</h4><p style="font-size:.81rem;color:var(--gray);">Top creators receive bonus payouts and priority access to premium campaigns.</p></div>
+        <div style="width:46px;height:46px;border-radius:13px;background:var(--green-xs);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;">🎁</div>
+        <div><h4 style="font-weight:700;margin-bottom:5px;font-size:1.05rem;">Performance Bonuses</h4><p style="font-size:.95rem;color:var(--gray);">Top creators receive bonus payouts and priority access to premium campaigns.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ WHAT YOU CREATE ═══ -->
-<section style="background:#fff;padding:76px 0;" id="create">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section style="background:#fff;padding:72px 0;" id="create">
+  <div class="w-full px-4 sm:px-8">
     <div class="text-center reveal" style="margin-bottom:52px;">
       <div class="stag">🎥 Content Types</div>
       <h2 class="stit">What You Will <span>Create</span></h2>
@@ -447,62 +447,62 @@
     <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
 
       <div class="card reveal" style="padding:0;overflow:hidden;">
-        <div class="iw" style="height:148px;border-radius:0;">
+        <div class="iw" style="height:168px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=500&q=82&fit=crop" alt="Product demo video filming smartphone"/>
           <div class="ov"></div>
         </div>
-        <div style="padding:16px;"><div style="font-size:1.35rem;margin-bottom:6px;">📹</div><h4 style="font-size:.88rem;font-weight:700;">Product Demo Video</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">30–90 sec natural usage video.</p></div>
+        <div style="padding:16px;"><div style="font-size:1.6rem;margin-bottom:7px;">📹</div><h4 style="font-size:.88rem;font-weight:700;">Product Demo Video</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">30–90 sec natural usage video.</p></div>
       </div>
 
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.1s;">
-        <div class="iw" style="height:148px;border-radius:0;">
+        <div class="iw" style="height:168px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1492107376256-4026437926cd?w=500&q=82&fit=crop" alt="Before after wellness transformation concept"/>
           <div class="ov"></div>
         </div>
-        <div style="padding:16px;"><div style="font-size:1.35rem;margin-bottom:6px;">✨</div><h4 style="font-size:.88rem;font-weight:700;">Before / After Concept</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">Wellness transformation storytelling.</p></div>
+        <div style="padding:16px;"><div style="font-size:1.6rem;margin-bottom:7px;">✨</div><h4 style="font-size:.88rem;font-weight:700;">Before / After Concept</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">Wellness transformation storytelling.</p></div>
       </div>
 
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.2s;">
-        <div class="iw" style="height:148px;border-radius:0;">
+        <div class="iw" style="height:168px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&q=82&fit=crop" alt="Instagram Reel vertical video creation"/>
           <div class="ov"></div>
         </div>
-        <div style="padding:16px;"><div style="font-size:1.35rem;margin-bottom:6px;">🎞️</div><h4 style="font-size:.88rem;font-weight:700;">Instagram Reel</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">15–30 sec hook-based vertical video.</p></div>
+        <div style="padding:16px;"><div style="font-size:1.6rem;margin-bottom:7px;">🎞️</div><h4 style="font-size:.88rem;font-weight:700;">Instagram Reel</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">15–30 sec hook-based vertical video.</p></div>
       </div>
 
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.3s;">
-        <div class="iw" style="height:148px;border-radius:0;">
+        <div class="iw" style="height:168px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&q=82&fit=crop" alt="YouTube Shorts recording desk setup"/>
           <div class="ov"></div>
         </div>
-        <div style="padding:16px;"><div style="font-size:1.35rem;margin-bottom:6px;">▶️</div><h4 style="font-size:.88rem;font-weight:700;">YouTube Shorts</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">Educational vertical shorts for YouTube.</p></div>
+        <div style="padding:16px;"><div style="font-size:1.6rem;margin-bottom:7px;">▶️</div><h4 style="font-size:.88rem;font-weight:700;">YouTube Shorts</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">Educational vertical shorts for YouTube.</p></div>
       </div>
 
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.4s;">
-        <div class="iw" style="height:148px;border-radius:0;">
+        <div class="iw" style="height:168px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1567596388756-f6d710c8fc07?w=500&q=82&fit=crop" alt="Voice over microphone script reading"/>
           <div class="ov"></div>
         </div>
-        <div style="padding:16px;"><div style="font-size:1.35rem;margin-bottom:6px;">🎙️</div><h4 style="font-size:.88rem;font-weight:700;">Voice-Over Script</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">Script provided — you bring the voice.</p></div>
+        <div style="padding:16px;"><div style="font-size:1.6rem;margin-bottom:7px;">🎙️</div><h4 style="font-size:.88rem;font-weight:700;">Voice-Over Script</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">Script provided — you bring the voice.</p></div>
       </div>
 
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.5s;">
-        <div class="iw" style="height:148px;border-radius:0;">
+        <div class="iw" style="height:168px;border-radius:0;">
           <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=82&fit=crop" alt="Doctor expert informational health video"/>
           <div class="ov"></div>
         </div>
-        <div style="padding:16px;"><div style="font-size:1.35rem;margin-bottom:6px;">👨‍⚕️</div><h4 style="font-size:.88rem;font-weight:700;">Expert Info Visual</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">Doctor-style informational content.</p></div>
+        <div style="padding:16px;"><div style="font-size:1.6rem;margin-bottom:7px;">👨‍⚕️</div><h4 style="font-size:.88rem;font-weight:700;">Expert Info Visual</h4><p style="font-size:.76rem;color:var(--gray);margin-top:4px;">Doctor-style informational content.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ GROWTH ═══ -->
-<section style="background:var(--green);padding:76px 0;" id="growth">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section style="background:var(--green);padding:72px 0;" id="growth">
+  <div class="w-full px-4 sm:px-8">
     <div class="grid lg:grid-cols-2 gap-14 items-center">
       <div class="rl">
-        <div class="iw" style="height:340px;border-radius:20px;">
+        <div class="iw" style="height:380px;border-radius:20px;">
           <img src="https://images.unsplash.com/photo-1520694478166-daaaaec95b69?w=600&q=82&fit=crop" alt="Career growth success professional development"/>
           <div class="ov" style="background:linear-gradient(to top,rgba(30,80,40,.8),transparent 60%);"></div>
           <div style="position:absolute;bottom:20px;left:20px;">
@@ -515,23 +515,23 @@
         <div class="stag" style="background:rgba(255,255,255,.15);color:#fff;">📈 Growth Path</div>
         <h2 class="stit" style="color:#fff;">Your Long-Term<br/><span style="color:#a8e0b0;">Growth Journey</span></h2>
         <div class="divl" style="background:linear-gradient(90deg,#fff,rgba(255,255,255,.3));"></div>
-        <p style="color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:28px;">We build lasting partnerships — as your work grows, so does your opportunity.</p>
+        <p style="color:rgba(255,255,255,.82);line-height:1.78;font-size:1.05rem;margin-bottom:28px;">We build lasting partnerships — as your work grows, so does your opportunity.</p>
         <div style="display:flex;flex-direction:column;gap:14px;">
           <div style="display:flex;gap:14px;align-items:start;background:rgba(255,255,255,.1);border-radius:14px;padding:16px;">
             <div class="sdot" style="font-size:.9rem;">1</div>
-            <div><h4 style="color:#fff;font-weight:700;margin-bottom:3px;">First Campaign</h4><p style="font-size:.8rem;color:rgba(255,255,255,.75);">Start with one paid project. Deliver quality &amp; build trust.</p></div>
+            <div><h4 style="color:#fff;font-weight:700;margin-bottom:3px;">First Campaign</h4><p style="font-size:1rem;color:rgba(255,255,255,.8);">Start with one paid project. Deliver quality &amp; build trust.</p></div>
           </div>
           <div style="display:flex;gap:14px;align-items:start;background:rgba(255,255,255,.1);border-radius:14px;padding:16px;">
             <div class="sdot" style="font-size:.9rem;">2</div>
-            <div><h4 style="color:#fff;font-weight:700;margin-bottom:3px;">Monthly Retainer</h4><p style="font-size:.8rem;color:rgba(255,255,255,.75);">Top creators graduate to recurring monthly work.</p></div>
+            <div><h4 style="color:#fff;font-weight:700;margin-bottom:3px;">Monthly Retainer</h4><p style="font-size:1rem;color:rgba(255,255,255,.8);">Top creators graduate to recurring monthly work.</p></div>
           </div>
           <div style="display:flex;gap:14px;align-items:start;background:rgba(255,255,255,.1);border-radius:14px;padding:16px;">
             <div class="sdot" style="font-size:.9rem;">3</div>
-            <div><h4 style="color:#fff;font-weight:700;margin-bottom:3px;">Brand Ambassador</h4><p style="font-size:.8rem;color:rgba(255,255,255,.75);">High-performers become ambassadors with priority campaigns.</p></div>
+            <div><h4 style="color:#fff;font-weight:700;margin-bottom:3px;">Brand Ambassador</h4><p style="font-size:1rem;color:rgba(255,255,255,.8);">High-performers become ambassadors with priority campaigns.</p></div>
           </div>
           <div style="display:flex;gap:14px;align-items:start;background:rgba(255,255,255,.1);border-radius:14px;padding:16px;">
             <div class="sdot" style="font-size:.9rem;">4</div>
-            <div><h4 style="color:#fff;font-weight:700;margin-bottom:3px;">Higher Payouts</h4><p style="font-size:.8rem;color:rgba(255,255,255,.75);">Long-term creators receive premium rates &amp; exclusive perks.</p></div>
+            <div><h4 style="color:#fff;font-weight:700;margin-bottom:3px;">Higher Payouts</h4><p style="font-size:1rem;color:rgba(255,255,255,.8);">Long-term creators receive premium rates &amp; exclusive perks.</p></div>
           </div>
         </div>
       </div>
@@ -540,46 +540,46 @@
 </section>
 
 <!-- ═══ SUPPORT ═══ -->
-<section class="leaf-bg" style="padding:76px 0;" id="support">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section class="leaf-bg" style="padding:72px 0;" id="support">
+  <div class="w-full px-4 sm:px-8">
     <div class="grid lg:grid-cols-2 gap-14 items-center">
       <div class="rl">
         <div class="stag">🎓 We Support You</div>
         <h2 class="stit">You're <span>Not Alone</span><br/>in This Journey</h2>
         <div class="divl"></div>
-        <p style="color:var(--gray);line-height:1.75;margin-bottom:26px;">Our team provides structured support so even first-time creators can deliver professional-quality content.</p>
+        <p style="color:var(--gray);line-height:1.8;font-size:1.05rem;margin-bottom:26px;">Our team provides structured support so even first-time creators can deliver professional-quality content.</p>
         <div style="display:flex;flex-direction:column;gap:16px;">
           <div style="display:flex;gap:13px;align-items:start;">
             <div class="sdot" style="width:36px;height:36px;font-size:.82rem;">✅</div>
-            <div><h4 style="font-weight:600;margin-bottom:2px;font-size:.92rem;">Detailed Product Brief</h4><p style="font-size:.8rem;color:var(--gray);">Complete product info, key messages &amp; campaign goals before you start.</p></div>
+            <div><h4 style="font-weight:700;margin-bottom:4px;font-size:1.05rem;">Detailed Product Brief</h4><p style="font-size:.95rem;color:var(--gray);">Complete product info, key messages &amp; campaign goals before you start.</p></div>
           </div>
           <div style="display:flex;gap:13px;align-items:start;">
             <div class="sdot" style="width:36px;height:36px;font-size:.82rem;background:var(--green-lt);">📋</div>
-            <div><h4 style="font-weight:600;margin-bottom:2px;font-size:.92rem;">Ready-to-use Script</h4><p style="font-size:.8rem;color:var(--gray);">Talking-point script provided — you bring your energy &amp; personality.</p></div>
+            <div><h4 style="font-weight:700;margin-bottom:4px;font-size:1.05rem;">Ready-to-use Script</h4><p style="font-size:.95rem;color:var(--gray);">Talking-point script provided — you bring your energy &amp; personality.</p></div>
           </div>
           <div style="display:flex;gap:13px;align-items:start;">
             <div class="sdot" style="width:36px;height:36px;font-size:.82rem;background:var(--green-lt);">🔁</div>
-            <div><h4 style="font-weight:600;margin-bottom:2px;font-size:.92rem;">Constructive Feedback</h4><p style="font-size:.8rem;color:var(--gray);">Clear, actionable review to help you improve each campaign.</p></div>
+            <div><h4 style="font-weight:700;margin-bottom:4px;font-size:1.05rem;">Constructive Feedback</h4><p style="font-size:.95rem;color:var(--gray);">Clear, actionable review to help you improve each campaign.</p></div>
           </div>
           <div style="display:flex;gap:13px;align-items:start;">
             <div class="sdot" style="width:36px;height:36px;font-size:.82rem;background:var(--green-lt);">📞</div>
-            <div><h4 style="font-weight:600;margin-bottom:2px;font-size:.92rem;">Dedicated Contact Person</h4><p style="font-size:.8rem;color:var(--gray);">A dedicated team member answers questions throughout every campaign.</p></div>
+            <div><h4 style="font-weight:700;margin-bottom:4px;font-size:1.05rem;">Dedicated Contact Person</h4><p style="font-size:.95rem;color:var(--gray);">A dedicated team member answers questions throughout every campaign.</p></div>
           </div>
         </div>
       </div>
       <div class="rr">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div class="iw" style="grid-row:1/3;height:380px;">
+          <div class="iw" style="grid-row:1/3;height:420px;">
             <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=500&q=82&fit=crop" alt="Team reviewing content feedback laptop"/>
             <div class="ov"></div>
             <span class="ib">👥 Team Support</span>
           </div>
-          <div class="iw" style="height:184px;">
+          <div class="iw" style="height:202px;">
             <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=82&fit=crop" alt="Script writing desk notepad pen"/>
             <div class="ov"></div>
             <span class="ib">📝 Script Desk</span>
           </div>
-          <div class="iw" style="height:184px;">
+          <div class="iw" style="height:202px;">
             <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=82&fit=crop" alt="Coaching feedback team meeting"/>
             <div class="ov"></div>
             <span class="ib">💬 Feedback</span>
@@ -591,8 +591,8 @@
 </section>
 
 <!-- ═══ APPLY ═══ -->
-<section style="background:#fff;padding:76px 0;" id="apply">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+<section style="background:#fff;padding:72px 0;" id="apply">
+  <div class="max-w-4xl mx-auto px-4 sm:px-8">
     <div class="text-center reveal" style="margin-bottom:46px;">
       <div class="stag">📩 Apply Now</div>
       <h2 class="stit">Ready to <span>Join Us?</span></h2>
@@ -603,10 +603,10 @@
       <!-- urgency -->
       <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:13px 17px;display:flex;align-items:center;gap:11px;margin-bottom:24px;">
         <span style="font-size:1.1rem;">⏳</span>
-        <p style="font-size:.83rem;font-weight:500;color:#c2410c;">Limited collaboration slots available — apply before they fill up.</p>
+        <p style="font-size:.95rem;font-weight:500;color:#c2410c;">Limited collaboration slots available — apply before they fill up.</p>
       </div>
       <!-- hero image inside form -->
-      <div class="iw reveal" style="height:154px;border-radius:14px;margin-bottom:24px;">
+      <div class="iw reveal" style="height:170px;border-radius:14px;margin-bottom:24px;">
         <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&q=82&fit=crop" alt="Freelancer working on laptop at home desk"/>
         <div class="ov"></div>
         <div style="position:absolute;bottom:14px;left:16px;">
@@ -615,25 +615,25 @@
       </div>
       <div id="aform" style="display:flex;flex-direction:column;gap:16px;">
         <div>
-          <label style="display:block;font-size:.83rem;font-weight:600;margin-bottom:6px;">Full Name *</label>
+          <label style="display:block;font-size:.97rem;font-weight:600;margin-bottom:7px;">Full Name *</label>
           <input type="text" placeholder="Enter your full name" class="finp" required/>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
           <div>
-            <label style="display:block;font-size:.83rem;font-weight:600;margin-bottom:6px;">City / State *</label>
+            <label style="display:block;font-size:.97rem;font-weight:600;margin-bottom:7px;">City / State *</label>
             <input type="text" placeholder="e.g. Mumbai, MH" class="finp" required/>
           </div>
           <div>
-            <label style="display:block;font-size:.83rem;font-weight:600;margin-bottom:6px;">Contact Number *</label>
+            <label style="display:block;font-size:.97rem;font-weight:600;margin-bottom:7px;">Contact Number *</label>
             <input type="tel" placeholder="+91 98765 43210" class="finp" required/>
           </div>
         </div>
         <div>
-          <label style="display:block;font-size:.83rem;font-weight:600;margin-bottom:6px;">Instagram / YouTube Link</label>
+          <label style="display:block;font-size:.97rem;font-weight:600;margin-bottom:7px;">Instagram / YouTube Link</label>
           <input type="url" placeholder="https://instagram.com/yourhandle" class="finp"/>
         </div>
         <div>
-          <label style="display:block;font-size:.83rem;font-weight:600;margin-bottom:6px;">Content Type</label>
+          <label style="display:block;font-size:.97rem;font-weight:600;margin-bottom:7px;">Content Type</label>
           <select class="finp" style="cursor:pointer;">
             <option value="">Select your content type</option>
             <option>UGC Video Creator</option>
@@ -644,11 +644,11 @@
           </select>
         </div>
         <button onclick="doSubmit()" class="btn anim-glow" style="width:100%;font-size:.98rem;padding:15px;border-radius:13px;margin-top:4px;">Apply Now &amp; Get Campaign Details →</button>
-        <p style="font-size:.71rem;text-align:center;color:#9ca3af;">By submitting you agree to be contacted by our team. Your data is safe and not shared with third parties.</p>
+        <p style="font-size:.82rem;text-align:center;color:#9ca3af;">By submitting you agree to be contacted by our team. Your data is safe and not shared with third parties.</p>
       </div>
       <div id="amsg" style="display:none;text-align:center;padding:38px 0;">
         <div style="font-size:3.5rem;margin-bottom:12px;" class="anim-float">🎉</div>
-        <h3 style="font-size:1.5rem;font-weight:700;color:var(--green);font-family:'Playfair Display',serif;margin-bottom:8px;">Application Received!</h3>
+        <h3 style="font-size:1.7rem;font-weight:700;color:var(--green);font-family:'Playfair Display',serif;margin-bottom:8px;">Application Received!</h3>
         <p style="color:var(--gray);">Our team will contact you within 48 hours. Welcome to the SS Herbal India Creator Network!</p>
       </div>
     </div>
@@ -656,8 +656,8 @@
 </section>
 
 <!-- ═══ FAQ ═══ -->
-<section class="leaf-bg" style="padding:76px 0;" id="faq">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+<section class="leaf-bg" style="padding:72px 0;" id="faq">
+  <div class="max-w-4xl mx-auto px-4 sm:px-8">
     <div class="text-center reveal" style="margin-bottom:46px;">
       <div class="stag">❓ Common Questions</div>
       <h2 class="stit">Frequently Asked <span>Questions</span></h2>
@@ -667,32 +667,32 @@
       <div class="faq-it" style="background:#fff;border-radius:14px;padding:0 20px;">
         <input type="checkbox" class="ftog" id="f1"/>
         <label class="flabel" for="f1">Do I need professional equipment?<span class="ic">+</span></label>
-        <div class="fbody"><p style="padding-bottom:16px;font-size:.86rem;color:var(--gray);line-height:1.7;">No. A decent smartphone with a working camera is sufficient. We provide scripts and briefs. Natural lighting and clear audio are the only requirements.</p></div>
+        <div class="fbody"><p style="padding-bottom:16px;font-size:1rem;color:var(--gray);line-height:1.75;">No. A decent smartphone with a working camera is sufficient. We provide scripts and briefs. Natural lighting and clear audio are the only requirements.</p></div>
       </div>
       <div class="faq-it" style="background:#fff;border-radius:14px;padding:0 20px;">
         <input type="checkbox" class="ftog" id="f2"/>
         <label class="flabel" for="f2">Is payment per video or per month?<span class="ic">+</span></label>
-        <div class="fbody"><p style="padding-bottom:16px;font-size:.86rem;color:var(--gray);line-height:1.7;">Payment is project-based — a fixed amount per deliverable, agreed before the project begins. Long-term creators may shift to a monthly arrangement.</p></div>
+        <div class="fbody"><p style="padding-bottom:16px;font-size:1rem;color:var(--gray);line-height:1.75;">Payment is project-based — a fixed amount per deliverable, agreed before the project begins. Long-term creators may shift to a monthly arrangement.</p></div>
       </div>
       <div class="faq-it" style="background:#fff;border-radius:14px;padding:0 20px;">
         <input type="checkbox" class="ftog" id="f3"/>
         <label class="flabel" for="f3">Do I need a large social media following?<span class="ic">+</span></label>
-        <div class="fbody"><p style="padding-bottom:16px;font-size:.86rem;color:var(--gray);line-height:1.7;">Not necessarily. We value content quality over follower count. Some roles like brand ambassador require a minimum audience base — details shared during onboarding.</p></div>
+        <div class="fbody"><p style="padding-bottom:16px;font-size:1rem;color:var(--gray);line-height:1.75;">Not necessarily. We value content quality over follower count. Some roles like brand ambassador require a minimum audience base — details shared during onboarding.</p></div>
       </div>
       <div class="faq-it" style="background:#fff;border-radius:14px;padding:0 20px;">
         <input type="checkbox" class="ftog" id="f4"/>
         <label class="flabel" for="f4">Will products be provided to me?<span class="ic">+</span></label>
-        <div class="fbody"><p style="padding-bottom:16px;font-size:.86rem;color:var(--gray);line-height:1.7;">Yes. Products are sent free of cost to verified creators for review and demonstration. No product purchase required to participate.</p></div>
+        <div class="fbody"><p style="padding-bottom:16px;font-size:1rem;color:var(--gray);line-height:1.75;">Yes. Products are sent free of cost to verified creators for review and demonstration. No product purchase required to participate.</p></div>
       </div>
       <div class="faq-it" style="background:#fff;border-radius:14px;padding:0 20px;">
         <input type="checkbox" class="ftog" id="f5"/>
         <label class="flabel" for="f5">Is this full-time or freelance?<span class="ic">+</span></label>
-        <div class="fbody"><p style="padding-bottom:16px;font-size:.86rem;color:var(--gray);line-height:1.7;">100% freelance / part-time. Work on your own schedule. No mandatory full-time commitment — designed for flexible, paid work.</p></div>
+        <div class="fbody"><p style="padding-bottom:16px;font-size:1rem;color:var(--gray);line-height:1.75;">100% freelance / part-time. Work on your own schedule. No mandatory full-time commitment — designed for flexible, paid work.</p></div>
       </div>
       <div class="faq-it" style="background:#fff;border-radius:14px;padding:0 20px;">
         <input type="checkbox" class="ftog" id="f6"/>
         <label class="flabel" for="f6">How long to get selected after applying?<span class="ic">+</span></label>
-        <div class="fbody"><p style="padding-bottom:16px;font-size:.86rem;color:var(--gray);line-height:1.7;">Our team reaches out within 24–48 working hours with campaign details, project scope, and payment terms — before any commitment from your side.</p></div>
+        <div class="fbody"><p style="padding-bottom:16px;font-size:1rem;color:var(--gray);line-height:1.75;">Our team reaches out within 24–48 working hours with campaign details, project scope, and payment terms — before any commitment from your side.</p></div>
       </div>
     </div>
   </div>
@@ -700,9 +700,9 @@
 
 <!-- ═══ DISCLAIMER ═══ -->
 <section style="background:#fff;border-top:1px solid rgba(58,125,68,.1);padding:40px 0;">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center reveal">
-    <h3 style="font-size:.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);margin-bottom:12px;">⚠️ Important Disclaimer</h3>
-    <p style="font-size:.73rem;line-height:1.75;color:#9ca3af;">
+  <div class="max-w-4xl mx-auto px-3 sm:px-5 text-center reveal">
+    <h3 style="font-size:.9rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:14px;">⚠️ Important Disclaimer</h3>
+    <p style="font-size:.88rem;line-height:1.8;color:#9ca3af;">
       SS Herbal India is a legitimate, registered brand in the Ayurvedic healthcare sector. This is a genuine freelance content creator opportunity — not a referral or network marketing scheme. All collaboration terms, project scope, and compensation are communicated transparently before any work begins. No upfront payment or product purchase is required from creators. Final collaboration is subject to content quality and brand fit assessment. Results of products are based on individual usage and are not guaranteed. We do not make exaggerated income claims — actual creator earnings depend on the volume of projects undertaken.
     </p>
   </div>
@@ -714,14 +714,14 @@
     <div style="width:33px;height:33px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.82rem;">SS</div>
     <p style="font-family:'Playfair Display',serif;font-weight:700;color:#fff;">SS Herbal India</p>
   </div>
-  <p style="font-size:.7rem;color:rgba(255,255,255,.3);">© 2025 SS Herbal India. All Rights Reserved. | 100% Ayurvedic | PAN India</p>
+  <p style="font-size:.82rem;color:rgba(255,255,255,.35);">© 2025 SS Herbal India. All Rights Reserved. | 100% Ayurvedic | PAN India</p>
 </footer>
 
 <!-- ═══ STICKY BAR ═══ -->
 <div class="sticky-b" id="sb">
   <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
-    <p style="font-size:.86rem;font-weight:500;">⏳ Limited slots available — join our creator network!</p>
-    <a href="#apply" style="background:#fff;color:var(--green);font-weight:700;font-size:.82rem;padding:8px 22px;border-radius:50px;text-decoration:none;">Apply Now →</a>
+    <p style="font-size:1rem;font-weight:500;">⏳ Limited slots available — join our creator network!</p>
+    <a href="#apply" style="background:#fff;color:var(--green);font-weight:700;font-size:.95rem;padding:9px 24px;border-radius:50px;text-decoration:none;">Apply Now →</a>
   </div>
 </div>
 
