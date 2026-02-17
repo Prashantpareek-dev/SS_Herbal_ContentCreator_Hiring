@@ -33,7 +33,28 @@
     width: 100%;
   }
   h1,h2,h3,h4 { font-family: 'Nunito', sans-serif; font-weight: 800; }
-  img { max-width: 100%; display: block; }
+  img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  
+  /* Enhanced responsive image containers */
+  .img-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+  
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: #1a1a1a; }
   ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
@@ -101,39 +122,40 @@
     box-shadow: 0 4px 20px rgba(0,0,0,.07);
     border: 1px solid rgba(201,168,76,.15);
     transition: transform .4s ease, box-shadow .4s ease;
-    height: 100%; /* Ensure all cards have equal height */
-    display: flex;
-    flex-direction: column;
   }
   .card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(201,168,76,.18); }
-  
-  /* Card content wrapper for flex layout */
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  
-  /* Standard image heights for consistency */
-  .uniform-card-img {
-    height: 180px; /* Consistent height for all card images */
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  .uniform-tall-img {
-    height: 280px; /* Consistent height for tall images */
-    width: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
 
-  /* ═══ IMAGE WRAPPER ═══ */
-  .iw { position:relative; overflow:hidden; border-radius:14px; }
-  .iw img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
-  .iw:hover img { transform:scale(1.06); }
-  .iw .ov { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.7),transparent 65%); pointer-events:none; }
+  /* ═══ ENHANCED RESPONSIVE IMAGE WRAPPER ═══ */
+  .iw { 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 14px;
+    width: 100%;
+    aspect-ratio: 16/10; /* Default aspect ratio */
+  }
+  
+  .iw.hero-img { aspect-ratio: 4/3; }
+  .iw.card-img { aspect-ratio: 16/9; }
+  .iw.square-img { aspect-ratio: 1/1; }
+  .iw.tall-img { aspect-ratio: 3/4; }
+  .iw.wide-img { aspect-ratio: 21/9; }
+  
+  .iw img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform .5s ease;
+    border-radius: inherit;
+  }
+  
+  .iw:hover img { transform: scale(1.06); }
+  
+  .iw .ov { 
+    position: absolute; 
+    inset: 0; 
+    background: linear-gradient(to top, rgba(0,0,0,.7), transparent 65%); 
+    pointer-events: none; 
+  }
   .iw .ib {
     position:absolute; bottom:10px; left:10px;
     background:rgba(0,0,0,.75); backdrop-filter:blur(8px);
@@ -257,9 +279,17 @@
     .stats-grid { grid-template-columns: 1fr 1fr !important; gap:20px !important; }
 
     /* About image grid: single col on mobile */
-    .about-img-grid { grid-template-columns: 1fr !important; }
-    .about-img-grid .span-2 { grid-row: auto !important; height:220px !important; }
-    .about-img-grid .sm-img { height:180px !important; }
+    /* Enhanced mobile responsive images */
+    .iw { aspect-ratio: 16/9 !important; }
+    .iw.hero-img { aspect-ratio: 4/3 !important; }
+    .iw.card-img { aspect-ratio: 3/2 !important; }
+    .iw.tall-img { aspect-ratio: 4/5 !important; }
+    .iw.square-img { aspect-ratio: 1/1 !important; }
+    
+    /* Remove fixed heights on mobile */
+    [style*="height:"]:not(nav):not(.sticky-b) {
+      height: auto !important;
+    }
 
     /* Role cards 1 col on small mobile, 2 col on larger */
     .roles-grid { grid-template-columns: 1fr !important; }
@@ -267,7 +297,12 @@
 
     /* Offer grid: single col */
     .offer-grid { grid-template-columns: 1fr !important; }
-    .offer-tall-img { grid-row: auto !important; height:220px !important; }
+    /* Enhanced mobile image sizing */
+    .offer-tall-img { 
+      grid-row: auto !important; 
+      aspect-ratio: 3/2 !important;
+      min-height: 200px;
+    }
 
     /* Content types: 1 col then 2 */
     .create-grid { grid-template-columns: 1fr 1fr !important; }
@@ -313,17 +348,6 @@
     /* Sticky bar on mobile */
     .sticky-b { padding:10px 12px; }
     .sticky-b p { font-size:.85rem !important; }
-    
-    /* Ensure minimum height for very small screens */
-    .iw { min-height: 160px; }
-    .iw.hero-img { min-height: 200px; }
-    .iw.card-img { min-height: 140px; }
-    
-    /* Override standard heights for mobile */
-    .create-grid .iw,
-    .roles-grid .iw {
-      height: 180px !important;
-    }
   }
 
   /* Show mosaic on >=480px, hide mobile single img */
@@ -430,12 +454,7 @@
             </div>
           </div>
           <!-- floating card — hidden on mobile via CSS -->
-          <div class="hero-float-card  anim-pulse" style="position:absolute;bottom:-14px;left:-10px;padding:11px 16px;display:flex;align-items:center;gap:10px;z-index:10;max-width:220px; background: var(--white); border-radius: 14px; padding: 24px;
-    box-shadow: 0 4px 20px rgba(0,0,0,.07);
-    border: 1px solid rgba(201,168,76,.15);
-    transition: transform .4s ease, box-shadow .4s ease;
-    display: flex;
-    flex-direction: column;">
+          <div class="hero-float-card card anim-pulse" style="position:absolute;bottom:-14px;left:-10px;padding:11px 16px;display:flex;align-items:center;gap:10px;z-index:10;max-width:220px;">
             <div style="width:34px;min-width:34px;height:34px;border-radius:8px;background:var(--gold);display:flex;align-items:center;justify-content:center;color:var(--black);">🌿</div>
             <div>
               <p style="font-size:.75rem;color:#9ca3af;">Now Accepting</p>
@@ -513,7 +532,7 @@
       </div>
       <div class="rr">
         <div class="about-img-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-          <div class="iw span-2" style="grid-row:1/3;height:380px;">
+          <div class="iw span-2 tall-img" style="grid-row:1/3;">
             <img src="./Image/pure.jpg" alt="Ayurvedic herbal medicine bottles"/>
             <div class="ov"></div><span class="ib">🌿 Pure Herbal</span>
           </div>
@@ -544,33 +563,33 @@
       <h2 class="stit">Roles We're <span>Hiring For</span></h2>
       <div class="divl cx"></div>
     </div>
-    <div class="roles-grid grid md:grid-cols-2 lg:grid-cols-4 gap-5" style="align-items: stretch;">
+    <div class="roles-grid grid md:grid-cols-2 lg:grid-cols-4 gap-5">
       <div class="card reveal" style="padding:0;overflow:hidden;border-top:4px solid var(--gold);">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="./Image/demo.png" alt="UGC creator"/><div class="ov"></div></div>
-        <div style="padding:18px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.6rem;margin-bottom:8px;">📹</div>
+        <div class="iw card-img"><img src="./Image/demo.png" alt="UGC creator"/><div class="ov"></div></div>
+        <div style="padding:18px;"><div style="font-size:1.6rem;margin-bottom:8px;">📹</div>
         <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:7px;">UGC Video Creator</h3>
-        <p style="font-size:.88rem;color:var(--gray);line-height:1.65;margin-bottom:12px;flex:1;">Authentic product usage videos for Reels &amp; Shorts. Shoot from home.</p>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.65;margin-bottom:12px;">Authentic product usage videos for Reels &amp; Shorts. Shoot from home.</p>
         <span style="background:var(--gold-xs);color:var(--gold-dk);font-size:.78rem;font-weight:700;padding:5px 13px;border-radius:50px;">🏠 Work From Home</span></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden;border-top:4px solid var(--gold);transition-delay:.1s;">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="./Image/reel.png" alt="Reel creator"/><div class="ov"></div></div>
-        <div style="padding:18px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.6rem;margin-bottom:8px;">🎞️</div>
+        <div class="iw card-img"><img src="./Image/reel.png" alt="Reel creator"/><div class="ov"></div></div>
+        <div style="padding:18px;"><div style="font-size:1.6rem;margin-bottom:8px;">🎞️</div>
         <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:7px;">Reel / Shorts Creator</h3>
-        <p style="font-size:.88rem;color:var(--gray);line-height:1.65;margin-bottom:12px;flex:1;">Trending short-form content with hooks, storytelling &amp; formats.</p>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.65;margin-bottom:12px;">Trending short-form content with hooks, storytelling &amp; formats.</p>
         <span style="background:var(--gold-xs);color:var(--gold-dk);font-size:.78rem;font-weight:700;padding:5px 13px;border-radius:50px;">📱 Mobile Friendly</span></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden;border-top:4px solid var(--gold);transition-delay:.2s;">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="./Image/voice.png" alt="Voice over artist"/><div class="ov"></div></div>
-        <div style="padding:18px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.6rem;margin-bottom:8px;">🎙️</div>
+        <div class="iw card-img"><img src="./Image/voice.png" alt="Voice over artist"/><div class="ov"></div></div>
+        <div style="padding:18px;"><div style="font-size:1.6rem;margin-bottom:8px;">🎙️</div>
         <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:7px;">Voice-Over Artist</h3>
-        <p style="font-size:.88rem;color:var(--gray);line-height:1.65;margin-bottom:12px;flex:1;">Clear Hindi or regional language voice for product explainers.</p>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.65;margin-bottom:12px;">Clear Hindi or regional language voice for product explainers.</p>
         <span style="background:var(--gold-xs);color:var(--gold-dk);font-size:.78rem;font-weight:700;padding:5px 13px;border-radius:50px;">🗣️ Multi-Language</span></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden;border-top:4px solid var(--gold);transition-delay:.3s;">
-        <div class="iw" style="height:220px;border-radius:0; "><img src="./Image/testimonial.png"  alt="Testimonial creator"/><div class="ov"></div></div>
-        <div style="padding:18px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.6rem;margin-bottom:8px;">⭐</div>
+        <div class="iw card-img"><img src="./Image/testimonial.png" alt="Testimonial creator"/><div class="ov"></div></div>
+        <div style="padding:18px;"><div style="font-size:1.6rem;margin-bottom:8px;">⭐</div>
         <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:7px;">Testimonial Creator</h3>
-        <p style="font-size:.88rem;color:var(--gray);line-height:1.65;margin-bottom:12px;flex:1;">Genuine, relatable testimonial videos. Real stories about wellness.</p>
+        <p style="font-size:.88rem;color:var(--gray);line-height:1.65;margin-bottom:12px;">Genuine, relatable testimonial videos. Real stories about wellness.</p>
         <span style="background:var(--gold-xs);color:var(--gold-dk);font-size:.78rem;font-weight:700;padding:5px 13px;border-radius:50px;">😊 Authentic Only</span></div>
       </div>
     </div>
@@ -585,9 +604,9 @@
       <h2 class="stit">Why Work With <span>SS Herbal India</span></h2>
       <div class="divl cx"></div>
     </div>
-    <div class="offer-grid grid lg:grid-cols-3 gap-5 mb-5" style="align-items: stretch;">
-      <div class="iw offer-tall-img reveal" style="height:320px;border-radius:16px;grid-row:span 2/span 2;">
-        <img src="./Image/build.png" alt="Team collaboration"/>
+    <div class="offer-grid grid lg:grid-cols-3 gap-5 mb-5">
+      <div class="iw offer-tall-img tall-img reveal" style="border-radius:16px;grid-row:span 2/span 2;">
+        <img src="./Image/team.png" alt="Team collaboration"/>
         <div class="ov"></div>
         <div style="position:absolute;bottom:16px;left:16px;right:16px;">
           <p style="color:#fff;font-size:1.1rem;font-weight:800;">Built for Freelance Creators</p>
@@ -596,33 +615,33 @@
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.1s;">
         <div style="width:44px;min-width:44px;height:44px;border-radius:10px;background:var(--gold-xs);display:flex;align-items:center;justify-content:center;font-size:1.6rem;">💸</div>
-        <div style="flex:1;"><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Transparent Payment</h4><p style="font-size:.9rem;color:var(--gray);">Fixed fee clearly stated upfront. Payments via UPI / Bank — no delays.</p></div>
+        <div><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Transparent Payment</h4><p style="font-size:.9rem;color:var(--gray);">Fixed fee clearly stated upfront. Payments via UPI / Bank — no delays.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.2s;">
         <div style="width:44px;min-width:44px;height:44px;border-radius:10px;background:var(--gold-xs);display:flex;align-items:center;justify-content:center;font-size:1.6rem;">📋</div>
-        <div style="flex:1;"><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Scripts &amp; Monthly Briefs</h4><p style="font-size:.9rem;color:var(--gray);">Creative briefs &amp; scripts provided — never start from zero.</p></div>
+        <div><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Scripts &amp; Monthly Briefs</h4><p style="font-size:.9rem;color:var(--gray);">Creative briefs &amp; scripts provided — never start from zero.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.3s;">
         <div style="width:44px;min-width:44px;height:44px;border-radius:10px;background:var(--gold-xs);display:flex;align-items:center;justify-content:center;font-size:1.6rem;">🎓</div>
-        <div style="flex:1;"><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Official Certificate</h4><p style="font-size:.9rem;color:var(--gray);">Brand certificate after each campaign — builds your portfolio.</p></div>
+        <div><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Official Certificate</h4><p style="font-size:.9rem;color:var(--gray);">Brand certificate after each campaign — builds your portfolio.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.4s;">
         <div style="width:44px;min-width:44px;height:44px;border-radius:10px;background:var(--gold-xs);display:flex;align-items:center;justify-content:center;font-size:1.6rem;">🔄</div>
-        <div style="flex:1;"><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Recurring Monthly Work</h4><p style="font-size:.9rem;color:var(--gray);">Consistent monthly campaigns — not a one-time gig.</p></div>
+        <div><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Recurring Monthly Work</h4><p style="font-size:.9rem;color:var(--gray);">Consistent monthly campaigns — not a one-time gig.</p></div>
       </div>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" style="align-items: stretch;">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <div class="card reveal flex gap-4 items-start">
         <div style="width:44px;min-width:44px;height:44px;border-radius:10px;background:var(--gold-xs);display:flex;align-items:center;justify-content:center;font-size:1.6rem;">🏡</div>
-        <div style="flex:1;"><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">100% Work from Home</h4><p style="font-size:.9rem;color:var(--gray);">All work is remote. Shoot at your convenience.</p></div>
+        <div><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">100% Work from Home</h4><p style="font-size:.9rem;color:var(--gray);">All work is remote. Shoot at your convenience.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.1s;">
         <div style="width:44px;min-width:44px;height:44px;border-radius:10px;background:var(--gold-xs);display:flex;align-items:center;justify-content:center;font-size:1.6rem;">📦</div>
-        <div style="flex:1;"><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Free Product Samples</h4><p style="font-size:.9rem;color:var(--gray);">Products sent free to verified creators for review.</p></div>
+        <div><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Free Product Samples</h4><p style="font-size:.9rem;color:var(--gray);">Products sent free to verified creators for review.</p></div>
       </div>
       <div class="card reveal flex gap-4 items-start" style="transition-delay:.2s;">
         <div style="width:44px;min-width:44px;height:44px;border-radius:10px;background:var(--gold-xs);display:flex;align-items:center;justify-content:center;font-size:1.6rem;">🎁</div>
-        <div style="flex:1;"><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Performance Bonuses</h4><p style="font-size:.9rem;color:var(--gray);">Top creators get bonus payouts and priority campaigns.</p></div>
+        <div><h4 style="font-weight:800;margin-bottom:4px;font-size:1rem;">Performance Bonuses</h4><p style="font-size:.9rem;color:var(--gray);">Top creators get bonus payouts and priority campaigns.</p></div>
       </div>
     </div>
   </div>
@@ -637,30 +656,30 @@
       <div class="divl cx"></div>
       <p style="color:var(--gray);max-width:480px;margin:0 auto;font-size:.9rem;">Briefs, scripts &amp; reference material are provided before you begin.</p>
     </div>
-    <div class="create-grid grid grid-cols-2 md:grid-cols-3 gap-4" style="align-items: stretch;">
+    <div class="create-grid grid grid-cols-2 md:grid-cols-3 gap-4">
       <div class="card reveal" style="padding:0;overflow:hidden;">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="./Image/demo.png" alt="Product demo video"/><div class="ov"></div></div>
-        <div style="padding:14px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.5rem;margin-bottom:6px;">📹</div><h4 style="font-size:.92rem;font-weight:800;">Product Demo</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;flex:1;">30–90 sec natural usage video.</p></div>
+        <div class="iw card-img"><img src="./Image/demo.png" alt="Product demo video"/><div class="ov"></div></div>
+        <div style="padding:14px;"><div style="font-size:1.5rem;margin-bottom:6px;">📹</div><h4 style="font-size:.92rem;font-weight:800;">Product Demo</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;">30–90 sec natural usage video.</p></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.1s;">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="./Image/befor&after.png" alt="Before after concept"/><div class="ov"></div></div>
-        <div style="padding:14px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.5rem;margin-bottom:6px;">✨</div><h4 style="font-size:.92rem;font-weight:800;">Before / After</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;flex:1;">Wellness transformation storytelling.</p></div>
+        <div class="iw card-img"><img src="./Image/befor&after.png" alt="Before after concept"/><div class="ov"></div></div>
+        <div style="padding:14px;"><div style="font-size:1.5rem;margin-bottom:6px;">✨</div><h4 style="font-size:.92rem;font-weight:800;">Before / After</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;">Wellness transformation storytelling.</p></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.2s;">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="./Image/insta.png" alt="Instagram Reel"/><div class="ov"></div></div>
-        <div style="padding:14px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.5rem;margin-bottom:6px;">🎞️</div><h4 style="font-size:.92rem;font-weight:800;">Instagram Reel</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;flex:1;">15–30 sec hook-based vertical video.</p></div>
+        <div class="iw" style="height:150px;border-radius:0;"><img src="./Image/insta.png" alt="Instagram Reel"/><div class="ov"></div></div>
+        <div style="padding:14px;"><div style="font-size:1.5rem;margin-bottom:6px;">🎞️</div><h4 style="font-size:.92rem;font-weight:800;">Instagram Reel</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;">15–30 sec hook-based vertical video.</p></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.3s;">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="./Image/youtube.png" alt="YouTube Shorts"/><div class="ov"></div></div>
-        <div style="padding:14px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.5rem;margin-bottom:6px;">▶️</div><h4 style="font-size:.92rem;font-weight:800;">YouTube Shorts</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;flex:1;">Educational vertical shorts.</p></div>
+        <div class="iw card-img"><img src="./Image/youtube.png" alt="YouTube Shorts"/><div class="ov"></div></div>
+        <div style="padding:14px;"><div style="font-size:1.5rem;margin-bottom:6px;">▶️</div><h4 style="font-size:.92rem;font-weight:800;">YouTube Shorts</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;">Educational vertical shorts.</p></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.4s;">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="https://images.unsplash.com/photo-1567596388756-f6d710c8fc07?w=500&q=82&fit=crop" alt="Voice over"/><div class="ov"></div></div>
-        <div style="padding:14px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.5rem;margin-bottom:6px;">🎙️</div><h4 style="font-size:.92rem;font-weight:800;">Voice-Over Script</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;flex:1;">Script provided — you bring the voice.</p></div>
+        <div class="iw card-img"><img src="https://images.unsplash.com/photo-1567596388756-f6d710c8fc07?w=500&q=82&fit=crop" alt="Voice over"/><div class="ov"></div></div>
+        <div style="padding:14px;"><div style="font-size:1.5rem;margin-bottom:6px;">🎙️</div><h4 style="font-size:.92rem;font-weight:800;">Voice-Over Script</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;">Script provided — you bring the voice.</p></div>
       </div>
       <div class="card reveal" style="padding:0;overflow:hidden;transition-delay:.5s;">
-        <div class="iw" style="height:220px;border-radius:0;"><img src="./Image/doctor.png" alt="Expert info visual"/><div class="ov"></div></div>
-        <div style="padding:14px;flex:1;display:flex;flex-direction:column;"><div style="font-size:1.5rem;margin-bottom:6px;">👨‍⚕️</div><h4 style="font-size:.92rem;font-weight:800;">Expert Info Visual</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;flex:1;">Doctor-style informational content.</p></div>
+        <div class="iw card-img"><img src="./Image/doctor.png" alt="Expert info visual"/><div class="ov"></div></div>
+        <div style="padding:14px;"><div style="font-size:1.5rem;margin-bottom:6px;">👨‍⚕️</div><h4 style="font-size:.92rem;font-weight:800;">Expert Info Visual</h4><p style="font-size:.78rem;color:var(--gray);margin-top:3px;">Doctor-style informational content.</p></div>
       </div>
     </div>
   </div>
@@ -671,7 +690,7 @@
   <div class="sec-wrap">
     <div class="growth-grid grid lg:grid-cols-2 gap-12 items-center">
       <div class="rl">
-        <div class="iw" style="height:320px;border-radius:16px;">
+        <div class="iw hero-img" style="border-radius:16px;">
           <img src="./Image/growth.png" alt="Career growth"/>
           <div class="ov" style="background:linear-gradient(to top,rgba(0,0,0,.85),transparent 60%);"></div>
           <div style="position:absolute;bottom:18px;left:18px;">
@@ -738,15 +757,15 @@
       </div>
       <div class="rr">
         <div class="support-img-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-          <div class="iw span-2" style="grid-row:1/3;height:380px;">
+          <div class="iw span-2 tall-img" style="grid-row:1/3;">
             <img src="./Image/team.png" alt="Team support"/>
             <div class="ov"></div><span class="ib">👥 Team Support</span>
           </div>
-          <div class="iw" style="height:185px;">
+          <div class="iw card-img">
             <img src="./Image/desk.png" alt="Script desk"/>
             <div class="ov"></div><span class="ib">📝 Script Desk</span>
           </div>
-          <div class="iw" style="height:185px;">
+          <div class="iw card-img">
             <img src="./Image/feedback.png" alt="Feedback session"/>
             <div class="ov"></div><span class="ib">💬 Feedback</span>
           </div>
