@@ -247,6 +247,9 @@
     /* Content types: 1 col then 2 */
     .create-grid { grid-template-columns: 1fr 1fr !important; }
 
+    /* Form responsiveness */
+    .form-two-col { grid-template-columns: 1fr !important; gap: 12px !important; }
+
     /* Growth: single col */
     .growth-grid { grid-template-columns: 1fr !important; }
 
@@ -727,28 +730,60 @@
         <span style="font-size:1rem;flex-shrink:0;">⏳</span>
         <p style="font-size:.9rem;font-weight:600;color:#8a6000;">Limited collaboration slots available — apply before they fill up.</p>
       </div>
-      <div id="aform" style="display:flex;flex-direction:column;gap:14px;">
+      <form id="applicationForm" style="display:flex;flex-direction:column;gap:14px;">
         <div>
           <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Full Name *</label>
-          <input type="text" placeholder="Enter your full name" class="finp" required/>
+          <input type="text" name="name" placeholder="Enter your full name" class="finp" required/>
         </div>
         <div class="form-two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:11px;">
           <div>
             <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">City / State *</label>
-            <input type="text" placeholder="e.g. Mumbai, MH" class="finp" required/>
+            <input type="text" name="city" placeholder="e.g. Mumbai, MH" class="finp" required/>
           </div>
           <div>
             <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Contact Number *</label>
-            <input type="tel" placeholder="+91 98765 43210" class="finp" required/>
+            <input type="tel" name="phone" placeholder="+91 98765 43210" class="finp" required/>
+          </div>
+        </div>
+        <div class="form-two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:11px;">
+          <div>
+            <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Gender *</label>
+            <select name="gender" class="finp" style="cursor:pointer;" required>
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Education *</label>
+            <select name="education" class="finp" style="cursor:pointer;" required>
+              <option value="">Select Education</option>
+              <option>12th Pass</option>
+              <option>Graduate</option>
+              <option>Post Graduate</option>
+              <option>Other</option>
+            </select>
           </div>
         </div>
         <div>
-          <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Instagram / YouTube Link</label>
-          <input type="url" placeholder="https://instagram.com/yourhandle" class="finp"/>
+          <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Content Creation Experience *</label>
+          <select name="experience" class="finp" style="cursor:pointer;" required>
+            <option value="">Select Experience Level</option>
+            <option>Complete Beginner</option>
+            <option>Less than 1 Year</option>
+            <option>1-2 Years</option>
+            <option>2-5 Years</option>
+            <option>5+ Years</option>
+          </select>
         </div>
         <div>
-          <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Content Type</label>
-          <select class="finp" style="cursor:pointer;">
+          <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Instagram / YouTube Link</label>
+          <input type="url" name="socialLink" placeholder="https://instagram.com/yourhandle" class="finp"/>
+        </div>
+        <div>
+          <label style="display:block;font-size:.92rem;font-weight:700;margin-bottom:6px;">Content Type *</label>
+          <select name="contentType" class="finp" style="cursor:pointer;" required>
             <option value="">Select your content type</option>
             <option>UGC Video Creator</option>
             <option>Reel / Shorts Creator</option>
@@ -757,9 +792,9 @@
             <option>Multiple / Others</option>
           </select>
         </div>
-        <button onclick="doSubmit()" class="btn anim-glow" style="width:100%;font-size:1rem;padding:15px;border-radius:10px;margin-top:3px;text-align:center;">Apply Now &amp; Get Campaign Details →</button>
+        <button type="submit" class="btn anim-glow" style="width:100%;font-size:1rem;padding:15px;border-radius:10px;margin-top:3px;text-align:center;">Apply Now &amp; Get Campaign Details →</button>
         <p style="font-size:.78rem;text-align:center;color:#9ca3af;">By submitting you agree to be contacted by our team. Your data is safe and not shared.</p>
-      </div>
+      </form>
       <div id="amsg" style="display:none;text-align:center;padding:36px 0;">
         <div style="font-size:3.2rem;margin-bottom:11px;" class="anim-float">🎉</div>
         <h3 style="font-size:1.6rem;font-weight:800;color:var(--gold);margin-bottom:8px;">Application Received!</h3>
@@ -876,17 +911,53 @@
   }), { threshold: 0.5 });
   document.querySelectorAll('.counter').forEach(el => cObs.observe(el));
 
+  // Google Apps Script URL - Replace this with your deployed script URL
+  const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+
   // form submit
+  document.getElementById('applicationForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.innerHTML = '⏳ Submitting...';
+    submitBtn.disabled = true;
+    
+    try {
+      // Collect form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Send to Google Sheets
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: formData
+      });
+      
+      const result = await response.json();
+      
+      if (result.status === 'success') {
+        // Redirect to thank you page
+        window.location.href = './Thankyou_Page.html';
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+      
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Failed to submit application. Please try again.');
+      
+      // Reset button state
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+
+  // Legacy function for backward compatibility
   function doSubmit() {
-    const inputs = document.querySelectorAll('#aform input[required]');
-    let ok = true;
-    inputs.forEach(i => {
-      if (!i.value.trim()) { i.style.borderColor = '#ef4444'; ok = false; }
-      else i.style.borderColor = '';
-    });
-    if (!ok) return;
-    document.getElementById('aform').style.display = 'none';
-    document.getElementById('amsg').style.display = 'block';
+    document.getElementById('applicationForm').dispatchEvent(new Event('submit'));
   }
 </script>
 </body>
