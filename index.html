@@ -362,12 +362,24 @@
 </nav>
 
 <!-- ═══ HERO ═══ -->
-<section style="background:linear-gradient(160deg,#111 0%,#1a1a1a 60%,#222 100%);position:relative;overflow:hidden;padding-top:72px;" id="hero">
-  <div style="position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 opacity=%220.07%22%3E%3Cellipse cx=%2260%22 cy=%2260%22 rx=%2218%22 ry=%2250%22 fill=%22%23c9a84c%22 transform=%22rotate(-30,60,60)%22/%3E%3Cellipse cx=%2260%22 cy=%2260%22 rx=%2218%22 ry=%2250%22 fill=%22%23c9a84c%22 transform=%22rotate(30,60,60)%22/%3E%3C/svg%3E');background-size:120px;pointer-events:none;z-index:0;"></div>
+<section style="position:relative;overflow:hidden;padding-top:70px;  color:black; " id="hero">
+  
+  <!-- Hero Header Image -->
+  <div style="position:relative;z-index:3;text-align:center;">
+    <picture>
+      <source media="(min-width: 768px)" srcset="./Image/background1.png">
+      <source media="(max-width: 767px)" srcset="./Image/background.png">
+      <img src="./Image/background.png" alt="SS Herbal India - Content Creator Hiring" style="width:100%; height:auto; object-fit: contain;box-shadow:0 8px 30px rgba(0,0,0,0.3);margin:0 auto;display:block;border-radius:12px;"/>
+    </picture>
+  </div>
+
+  <!-- Black overlay on background image -->
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.9);z-index:1;"></div>
+  <div style="position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 opacity=%220.07%22%3E%3Cellipse cx=%2260%22 cy=%2260%22 rx=%2218%22 ry=%2250%22 fill=%22%23c9a84c%22 transform=%22rotate(-30,60,60)%22/%3E%3Cellipse cx=%2260%22 cy=%2260%22 rx=%2218%22 ry=%2250%22 fill=%22%23c9a84c%22 transform=%22rotate(30,60,60)%22/%3E%3C/svg%3E');background-size:120px;pointer-events:none;z-index:2;"></div>
   <span class="hero-float-emoji anim-float" style="position:absolute;top:90px;right:5%;font-size:2.8rem;opacity:.15;z-index:1;">🌿</span>
   <span class="hero-float-emoji anim-float" style="position:absolute;bottom:80px;left:2%;font-size:2.2rem;opacity:.13;z-index:1;animation-delay:.7s;">🍃</span>
 
-  <div class="sec-wrap relative py-12 pb-20" style="z-index:2;">
+  <div class="sec-wrap relative py-12 " style="z-index:2;">
     <div class="hero-grid grid lg:grid-cols-2 gap-10 items-center">
 
       <!-- LEFT COPY -->
@@ -382,6 +394,9 @@
         <p style="color:rgba(255,255,255,.75);line-height:1.78;font-size:1rem;">
           SS Herbal India is looking for passionate <strong>UGC creators, freelance video makers &amp; voice artists</strong>
           to join our growing digital campaign ecosystem. Real work. Real pay. Long-term partnership.
+        </p>
+        <p style="color:rgba(255,255,255,.8);line-height:1.78;font-size:1rem;margin-top:12px;background:rgba(201,168,76,.15);padding:12px;border-radius:8px;border-left:4px solid var(--gold); font-weight: 700;">
+          <strong class="text-[1.45rem] text-yellow-500">🎭 Special Opportunity :</strong> If you have a <strong>good social media following</strong> or are an <strong class="text-[1rem] text-yellow-500">actor / model</strong>, we are actively hiring for brand promotions featuring your account and face as our brand ambassador.
         </p>
         <ul style="margin-top:20px;display:flex;flex-direction:column;gap:11px;">
           <li style="display:flex;align-items:center;gap:11px;font-size:.95rem;font-weight:600;color:rgba(255,255,255,.88);">
@@ -402,16 +417,19 @@
           <a href="#roles" class="btno" style="border-color:rgba(255,255,255,.5);color:#fff;">View Roles</a>
         </div>
         <div class="hero-badges" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;">
-          <span class="tbadge">✅ 100% Ayurvedic</span>
+          <span class="tbadge">⭐ Testimonial Creator</span>
           <span class="tbadge">🇮🇳 PAN India</span>
           <span class="tbadge">🏡 Work From Home</span>
+          <span class="tbadge">🎬 UGC Video Creator</span>
+          <span class="tbadge">🎞️ Reel / Shorts Creator</span>
+          <span class="tbadge">🎙️Voice-Over Artist</span>
         </div>
       </div>
 
       <!-- RIGHT IMAGE MOSAIC — hidden on very small, shown >=480px -->
       <div class="hero-img-wrap" style="position:relative;">
         <!-- Mosaic for larger screens -->
-        <div class="mosaic-wrap">
+         <div class="mosaic-wrap">
           <div class="mosaic">
             <div class="iw big">
               <img src="./Image/UGC.avif" alt="Content creator filming with smartphone"/>
@@ -430,7 +448,7 @@
             </div>
           </div>
           <!-- floating card — hidden on mobile via CSS -->
-          <div class="hero-float-card  anim-pulse" style="position:absolute;bottom:-14px;left:-10px;padding:11px 16px;display:flex;align-items:center;gap:10px;z-index:10;max-width:220px; background: var(--white); border-radius: 14px; padding: 24px;
+           <div class="hero-float-card  anim-pulse" style="position:absolute;bottom:-14px;left:-10px;padding:11px 16px;display:flex;align-items:center;gap:10px;z-index:10;max-width:220px; background: var(--white); border-radius: 14px; padding: 24px;
     box-shadow: 0 4px 20px rgba(0,0,0,.07);
     border: 1px solid rgba(201,168,76,.15);
     transition: transform .4s ease, box-shadow .4s ease;
@@ -475,7 +493,7 @@
 </div>
 
 <!-- ═══ STATS ═══ -->
-<section style="background:var(--off-white);padding:44px 0;">
+<section style="background:var(--off-white);padding:11px 0;">
   <div class="sec-wrap">
     <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <div class="reveal"><div class="cnum counter" data-t="500">0</div><p style="font-size:.78rem;font-weight:700;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-top:5px;">Products</p></div>

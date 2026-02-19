@@ -1,0 +1,202 @@
+<!-- Popup Form -->
+<div class="popup" id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:9999; overflow:auto;">
+  <div class="popup-content" style="
+        background: linear-gradient(145deg, #101820, #16212b);
+        border-radius:20px; padding:30px; width:90%; max-width:500px;
+        color:#E9FCEB; box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        font-family:'Poppins', sans-serif;
+        position:relative;
+        transform: scale(0);
+        transition: transform 0.3s ease;
+        max-height: 90vh; overflow-y: auto;
+    ">
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closePopup()" style="
+        background:#dc3545; color:#fff; border:none; border-radius:10px;
+        padding:6px 12px; cursor:pointer; position:absolute; top:15px; right:15px;
+        font-weight:600;
+    ">X</button>
+
+    <!-- Title -->
+    <h2 style="text-align:center; color:#25D366; font-size:1.7rem; font-weight:700; margin-bottom:5px;">
+      Automate & Scale with WhatsApp Masterclass
+    </h2>
+    <h4 style="text-align:center; font-size:0.95rem; font-weight:400; color:#b5cbbf; margin-bottom:20px;">
+      Date: Friday, 20 Feb 2026 at 5 pm
+    <!-- Form -->
+    <form id="registerForm" style="display:flex; flex-direction:column; gap:15px;">
+
+      <input type="text" name="first_name" placeholder="First Name *" required style="
+        padding:14px 15px; border-radius:12px; border:none; background:#0E1A21;
+        color:#E9FCEB; font-size:0.95rem; box-shadow:0 4px 15px rgba(37,211,102,0.2);
+      ">
+
+      <input type="text" name="last_name" placeholder="Last Name *" required style="
+        padding:14px 15px; border-radius:12px; border:none; background:#0E1A21;
+        color:#E9FCEB; font-size:0.95rem; box-shadow:0 4px 15px rgba(37,211,102,0.2);
+      ">
+
+      <input type="tel" name="phone" id="phone" placeholder="Phone Number *" maxlength="12" required style="
+        padding:14px 15px; border-radius:12px; border:none; background:#0E1A21;
+        color:#E9FCEB; font-size:0.95rem; box-shadow:0 4px 15px rgba(37,211,102,0.2);
+      ">
+
+      <input type="email" name="email" placeholder="Email Address *" required style="
+        padding:14px 15px; border-radius:12px; border:none; background:#0E1A21;
+        color:#E9FCEB; font-size:0.95rem; box-shadow:0 4px 15px rgba(37,211,102,0.2);
+      ">
+
+      <select name="industry" required style="
+        padding:14px 15px; border-radius:12px; border:none; background:#0E1A21;
+        color:#E9FCEB; font-size:0.95rem; box-shadow:0 4px 15px rgba(37,211,102,0.2);
+      ">
+        <option value="">Select Your Business Industry*</option>
+        <option>Manufacturing</option>
+        <option>Trading</option>
+        <option>Import/Export</option>
+        <option>Consulting</option>
+        <option>IT/Softwares</option>
+        <option>Health & Fitness</option>
+        <option>Insurance/Investments</option>
+        <option>Banking & Financial Services</option>
+        <option>Event Management / Wedding Planners</option>
+        <option>NGOs / Nonprofits / CSR</option>
+        <option>Real Estate</option>
+        <option>Marketing and Advertising</option>
+        <option>Healthcare</option>
+        <option>Architecture & Interiors</option>
+        <option>E-commerce</option>
+        <option>Automobile / Car Dealerships</option>
+        <option>Hospitality (Hotels / Travel / Tours)</option>
+        <option>Other</option>
+      </select>
+
+      <select name="api" required style="
+        padding:14px 15px; border-radius:12px; border:none; background:#0E1A21;
+        color:#E9FCEB; font-size:0.95rem; box-shadow:0 4px 15px rgba(37,211,102,0.2);
+      ">
+        <option value="">Are you using Official WhatsApp API? *</option>
+        <option>YES</option>
+        <option>NO</option>
+      </select>
+
+      <input type="text" name="employees" placeholder="How many employees do you have? *" required style="
+        padding:14px 15px; border-radius:12px; border:none; background:#0E1A21;
+        color:#E9FCEB; font-size:0.95rem; box-shadow:0 4px 15px rgba(37,211,102,0.2);
+      " oninput="this.value = this.value.replace(/[^0-9]/g,'');">
+
+      <button type="submit" class="submit-btn" id="submitBtn" style="
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        color:white; font-weight:600; border:none; border-radius:25px; padding:14px 20px;
+        cursor:pointer; font-size:1.05rem; display:flex; justify-content:center; align-items:center; gap:8px;
+        box-shadow:0 6px 20px rgba(37,211,102,0.4); transition:all 0.3s ease;
+      ">
+        <span id="btnText">Register Now</span>
+        <span id="btnLoader" style="display:none; flex-align:center;">
+          <svg width="24" height="24" viewBox="0 0 50 50">
+            <circle cx="25" cy="25" r="20" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round">
+              <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" from="0 25 25" to="360 25 25"/>
+            </circle>
+          </svg>
+          <span style="margin-left:8px;">Booking Your Seats...</span>
+        </span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openPopup() {
+    const popup = document.getElementById("popup");
+    const content = popup.querySelector(".popup-content");
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    setTimeout(() => { content.style.transform = "scale(1)"; }, 10);
+  }
+
+  function closePopup() {
+    const popup = document.getElementById("popup");
+    const content = popup.querySelector(".popup-content");
+    content.style.transform = "scale(0)";
+    setTimeout(() => { 
+      popup.style.display = "none"; 
+      document.body.style.overflow = "auto";
+    }, 300);
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".elementor-button-content-wrapper");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        openPopup();
+      });
+    });
+  });
+
+  // 🔥 Allow only 10–12 digit number
+  const phoneInput = document.getElementById("phone");
+  phoneInput.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, '');
+    if (this.value.length > 12) this.value = this.value.slice(0, 12);
+  });
+
+  // 🔥 Form Submit
+  document.getElementById("registerForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const phone = phoneInput.value.trim();
+    if (phone.length < 10 || phone.length > 12) {
+      alert("Please enter a valid phone number (10 to 12 digits allowed).");
+      phoneInput.focus();
+      return;
+    }
+
+    const submitBtn = document.getElementById("submitBtn");
+    const btnText = document.getElementById("btnText");
+    const btnLoader = document.getElementById("btnLoader");
+
+    btnText.style.display = "none";
+    btnLoader.style.display = "flex";
+    submitBtn.disabled = true;
+
+    const formData = new FormData(this);
+    const baseData = Object.fromEntries(formData.entries());
+
+    const urlParams = new URLSearchParams(window.location.search);
+    ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(param => {
+      if(urlParams.has(param)) baseData[param] = urlParams.get(param);
+    });
+
+    const n8nData = { ...baseData };
+    n8nData.name = `${baseData.first_name || ''} ${baseData.last_name || ''}`.trim();
+    delete n8nData.first_name;
+    delete n8nData.last_name;
+
+    const activepiecesData = { ...baseData };
+
+    try {
+      await Promise.all([
+        fetch("https://n8n.dipanshuvijay.com/webhook/b107b8af-2c88-4892-8dd2-32e749612fcf", {
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body: JSON.stringify(n8nData)
+        }),
+        fetch("https://activepieces.dipanshuvijay.com/api/v1/webhooks/VDzfqSOYtSko7WTw5MKyo", {
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body: JSON.stringify(activepiecesData)
+        })
+      ]);
+      
+      window.location.href="https://wa.dipanshuvijay.in/your-seat-is-reserved-thank-you/";
+
+    } catch (error) {
+      alert("Error submitting form. Please try again.");
+      console.error(error);
+      btnText.style.display = "inline-block";
+      btnLoader.style.display = "none";
+      submitBtn.disabled = false;
+    }
+  });
+</script>
